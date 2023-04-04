@@ -10,11 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS    	=		main.c						\
+SRCS    	=		includes/main.c		\
 
 OBJS    	=		${SRCS:.c=.o}
 
 NAME    	=		minishell
+
+RL			=		-L/opt/homebrew/opt/readline/lib -lreadline
 
 CC      	=		gcc -g
 
@@ -25,7 +27,7 @@ CFLAGS  	=		-Wall -Wextra -Werror #-g -fsanitize=address
 all:				${NAME}
 
 ${NAME}:			${OBJS}
-					${CC} ${CFLAGS} -o ${NAME} ${OBJS}
+					${CC} ${CFLAGS} ${RL} -o ${NAME} ${OBJS}
 
 clean:
 					${RM} ${OBJS}
