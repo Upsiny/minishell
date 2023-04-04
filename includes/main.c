@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-//thomas est passe par la
+//helian est passe par la
 
 int	main(int ac, char **av)
 {
