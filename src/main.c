@@ -9,8 +9,11 @@ int	main(int ac, char **av, char **env)
 	(void)*env;
     char* input;
 
-    while ((input = readline("Coquille Minuscule > ")) != NULL)
-    {
-       free(input);
-    }
+	while (1)
+	{
+    	while ((input = readline("Coquille Minuscule $> ")) != NULL)
+    	{
+       	free(input);
+    	}
+	}
 }

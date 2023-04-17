@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minisell.h                                         :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hguillau <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tpaufert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/03/31 11:48:31 by hguillau         ###   ########.fr       */
+/*   Created: 2022/03/22 13:58:46 by tpaufert          #+#    #+#             */
+/*   Updated: 2022/03/27 15:31:19 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <readline/readline.h> 
-# include <stdlib.h>
+void	ft_bzero(void *s, size_t n)
+{
+	int		i;
+	char	*str;
 
-#endif
+	str = (char *)s;
+	i = 0;
+	while (n > 0)
+	{
+		str[i] = '\0';
+		i++;
+		n--;
+	}
+}

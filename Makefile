@@ -10,33 +10,36 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS    	=		src/main.c		\
+SRCS    	=	src/main.c
 
-OBJS    	=		${SRCS:.c=.o}
+OBJS    	=	${SRCS:.c=.o}
 
-NAME    	=		minishell
+NAME    	=	minishell
 
-RL			=		-L/opt/homebrew/opt/readline/lib -lreadline
+LIBS		=	./src/libft/
 
-CC      	=		gcc -g
+RL			=	-L/opt/homebrew/opt/readline/lib -lreadline
 
-RM      	=		rm -f
+CC      	=	gcc
 
-CFLAGS  	=		-Wall -Wextra -Werror #-g -fsanitize=address
+RM      	=	rm -f
 
-all:				${NAME}
+CFLAGS  	=	-Wall -Wextra -Werror
 
-${NAME}:			${OBJS}
-					${CC} ${CFLAGS} ${RL} -o ${NAME} ${OBJS}
+all:		${NAME}
+
+${NAME}:	${OBJS}
+			make all -C ${LIBS}
+			${CC} ${CFLAGS} ${RL} -o ${NAME} ${OBJS} -L${LIBS} -lft
 
 clean:
-					${RM} ${OBJS}
+			make clean -C ${LIBS}
+			${RM} ${OBJS}
 
-fclean: 			clean
-					${RM} ${NAME}
+fclean:		clean
+			make fclean -C ${LIBS}
+			${RM} ${NAME}
 
-re:     			fclean all
+re:			fclean all
 
-bonus:				all
-
-.PHONY: 			all clean fclean re
+.PHONY:		all clean fclean re
