@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpaufert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/04/14 15:52:48 by tpaufert         ###   ########.fr       */
+/*   Created: 2022/03/26 13:44:52 by tpaufert          #+#    #+#             */
+/*   Updated: 2022/04/02 16:32:57 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <readline/readline.h> 
-# include <stdlib.h>
+char	*ft_strtrim(const char *s1, const char *set)
+{
+	size_t	i;
 
-#endif
+	if (!s1 || !set)
+		return (NULL);
+	while (ft_strchr(set, *s1) && *s1)
+		s1++;
+	i = ft_strlen(s1);
+	while (ft_strchr(set, s1[i]) && i > 0)
+		i--;
+	return (ft_substr(s1, 0, i + 1));
+}
+/*
+int main()
+{
+	printf("%s", ft_strtrim("ababHELLOabWORLDbaab", "ab"));
+}*/

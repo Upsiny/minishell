@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpaufert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/04/14 15:52:48 by tpaufert         ###   ########.fr       */
+/*   Created: 2022/04/02 21:06:12 by tpaufert          #+#    #+#             */
+/*   Updated: 2022/04/02 21:13:16 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <readline/readline.h> 
-# include <stdlib.h>
-
-#endif
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
+{
+	del(lst->content);
+	free(lst);
+}

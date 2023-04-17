@@ -1,20 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpaufert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/04/14 15:52:48 by tpaufert         ###   ########.fr       */
+/*   Created: 2022/03/22 14:31:00 by tpaufert          #+#    #+#             */
+/*   Updated: 2022/04/01 16:47:38 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <readline/readline.h> 
-# include <stdlib.h>
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	size_t	i;	
 
-#endif
+	i = 0;
+	if (src == NULL && dst == NULL)
+		return (NULL);
+	if (dst > src)
+	{
+		while (len > 0)
+		{
+			((char *) dst)[len - 1] = ((char *) src)[len - 1];
+			len--;
+		}
+	}
+	else
+	{
+		while (i < len)
+		{
+			((char *) dst)[i] = ((char *) src)[i];
+			i++;
+		}
+	}
+	return (dst);
+}

@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpaufert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/04/14 15:52:48 by tpaufert         ###   ########.fr       */
+/*   Created: 2022/03/23 16:37:04 by tpaufert          #+#    #+#             */
+/*   Updated: 2022/03/25 14:56:22 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <readline/readline.h> 
-# include <stdlib.h>
-
-#endif
+int	ft_tolower(int c)
+{
+	if (c >= 65 && c <= 90)
+		c += 32;
+	return (c);
+}

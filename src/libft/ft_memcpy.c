@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpaufert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/04/14 15:52:48 by tpaufert         ###   ########.fr       */
+/*   Created: 2022/03/22 14:11:50 by tpaufert          #+#    #+#             */
+/*   Updated: 2022/04/01 17:24:23 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <readline/readline.h> 
-# include <stdlib.h>
+void	*ft_memcpy(void *dst, const void *src, size_t n)
+{
+	char			*dest;
+	char			*source;
+	unsigned int	i;
 
-#endif
+	i = 0;
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	source = (char *)src;
+	dest = (char *)dst;
+	while (i < n)
+	{
+		dest[i] = source[i];
+		i++;
+	}
+	return ((char *)dest);
+}
