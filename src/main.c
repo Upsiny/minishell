@@ -2,6 +2,12 @@
 
 //helian est passe par la
 
+void sigint_handler(int sig)
+{
+	(void)sig;
+	return ;
+}
+
 int	main(int ac, char **av, char **env)
 {
 	(void)ac;
@@ -11,9 +17,10 @@ int	main(int ac, char **av, char **env)
 
 	while (1)
 	{
-    	while ((input = readline("Coquille Minuscule $> ")) != NULL)
+		signal(SIGINT, sigint_handler);
+    	while ((input = readline("minishell $> ")) != NULL)
     	{
-       	free(input);
+ 	      	free(input);
     	}
 	}
 }
