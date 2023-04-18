@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hguillau <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: tpaufert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/31 11:43:52 by hguillau          #+#    #+#              #
-#    Updated: 2023/03/31 11:45:25 by hguillau         ###   ########.fr        #
+#    Updated: 2023/04/17 18:36:48 by tpaufert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME    	=	minishell
 
 LIBS		=	./src/libft/
 
-RL			=	-L/opt/homebrew/opt/readline/lib -lreadline
+RL			=	-lreadline ./vendor/libreadline.a
 
 CC      	=	gcc
 
