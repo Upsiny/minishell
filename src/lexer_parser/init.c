@@ -10,12 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lexer_parser.h"
+// #include "../../includes/lexer_parser.h"
+#include "../../includes/minishell.h"
 
-void	init_struct(t_data *data, char **envp)
+t_data	*init_struct(char **envp)
 {
+	t_data	*data;
+
     data = malloc(sizeof(t_data));
     if (envp[0] == NULL)
         printf("...");
     data->pid = -1;
+	return (data);
 }

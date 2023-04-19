@@ -1,4 +1,5 @@
 #include "../includes/minishell.h"
+// #include "../includes/lexer_parser.h"
 
 void sigint_handler(int sig)
 {
@@ -13,15 +14,14 @@ int	main(int ac, char **av, char **envp)
 	(void)*envp;
 	t_data	*data;
 
-	data = malloc(sizeof(t_data));
-	//data = init_struct(data, envp);
+	data = init_struct(envp);
 	if (ac != 1)
 		return (1); // passer par une fonction erreur
 	if (!data)
 		return (1); // passer par une fonction erreur
 	while (1)
 	{
-		// faire une fonction pour les signaux
+	//	ft_signal();// faire une fonction pour les signaux
 		signal(SIGINT, sigint_handler);
     	data->prompt = readline("minishell $> ");
 		if (data->prompt == NULL)

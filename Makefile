@@ -10,7 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS    	=	src/main.c
+SRCS    	=	src/main.c						\
+				src/lexer_parser/init.c			\
 
 OBJS    	=	${SRCS:.c=.o}
 

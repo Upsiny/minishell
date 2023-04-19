@@ -24,7 +24,7 @@
 
 typedef struct s_cmd
 {
-	char	**cmd;
+	char 	**cmd;
 	char	**stdin;
 	char	**stdout;
 } t_cmd;
@@ -36,5 +36,7 @@ typedef struct s_data
 	char	*prompt;
 	char	*line;
 } t_data;
+
+t_data	*init_struct(char **envp);
 
 #endif
