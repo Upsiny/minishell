@@ -34,7 +34,6 @@ typedef struct s_data
 	t_cmd	**cmd;
 	pid_t	pid;
 	char	*prompt;
-	char	*line;
 } t_data;
 
 t_data	*init_struct(char **envp);
