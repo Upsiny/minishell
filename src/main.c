@@ -1,12 +1,4 @@
 #include "../includes/minishell.h"
-// #include "../includes/lexer_parser.h"
-
-void sigint_handler(int sig)
-{
-	if (sig == 2)
-		printf("\n");
-	return ;
-}
 
 int	main(int ac, char **av, char **envp)
 {
@@ -20,7 +12,7 @@ int	main(int ac, char **av, char **envp)
 		return (1); // passer par une fonction erreur
 	while (1)
 	{
-	//	ft_signal();// faire une fonction pour les signaux
+		ft_signal();// faire une fonction pour les signaux
 		data->pid = -1;
 		signal(SIGINT, sigint_handler);
     		data->prompt = readline("minishell $> ");

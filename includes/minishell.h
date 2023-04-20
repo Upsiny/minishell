@@ -36,6 +36,11 @@ typedef struct s_data
 	char	*prompt;
 } t_data;
 
+//////////// Lexer_Parser //////////////////
+
 t_data	*init_struct(char **envp);
+
+//////////// Signaux /////////////////
+
 
 #endif
