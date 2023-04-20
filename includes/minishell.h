@@ -45,4 +45,8 @@ t_data	*init_struct(char **envp);
 
 void	ft_signaux();
 
+//////////// Erreurs ///////////////
+
+void	ft_error_msg(char *msg);
+
 #endif

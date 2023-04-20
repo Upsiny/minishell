@@ -7,12 +7,12 @@ int	main(int ac, char **av, char **envp)
 
 	data = init_struct(envp);
 	if (ac != 1)
-		return (1); // passer par une fonction erreur
+		ft_error_msg("no arguments accepted"); // passer par une fonction erreur
 	if (!data)
-		return (1); // passer par une fonction erreur
+		ft_error_msg("Malloc Error"); // passer par une fonction erreur
 	while (1)
 	{
-		ft_signaux();// faire une fonction pour les signaux
+		ft_signaux();
 		data->pid = -1;
     	data->prompt = readline("minishell $> ");
 		if (data->prompt == NULL)

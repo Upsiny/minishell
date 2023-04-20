@@ -13,6 +13,7 @@
 SRCS    	=	src/main.c						\
 				src/signaux/signaux.c			\
 				src/lexer_parser/init.c			\
+				src/errors/error.c				\
 
 OBJS    	=	${SRCS:.c=.o}
 
