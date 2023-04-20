@@ -42,5 +42,6 @@ t_data	*init_struct(char **envp);
 
 //////////// Signaux /////////////////
 
+void	ft_signaux();
 
 #endif

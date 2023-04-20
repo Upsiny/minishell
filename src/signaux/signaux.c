@@ -5,6 +5,7 @@ void	ft_ctrl_c(int sig)
 	if (sig == 2)
 	{
 		printf("\n");
+		rl_replace_line("", 0);
 	}
 }
 
