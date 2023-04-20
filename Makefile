@@ -20,7 +20,9 @@ NAME    	=	minishell
 
 LIBS		=	./src/libft/
 
-RL			=	-lreadline ./vendor/libreadline.a
+RL			=	-L/opt/homebrew/opt/readline/lib -lreadline 
+
+#RL			=	-lreadline ./vendor/libreadline.a
 
 CC      	=	gcc
 
@@ -32,7 +34,7 @@ all:		${NAME}
 
 ${NAME}:	${OBJS}
 			make all -C ${LIBS}
-			${CC} ${CFLAGS} ${RL} -o ${NAME} ${OBJS} -L${LIBS} -lft
+			${CC} ${CFLAGS} ${RL} -o ${NAME} ${OBJS} -L ${LIBS} -lft
 
 clean:
 			make clean -C ${LIBS}
