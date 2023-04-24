@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tpaufert <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/31 11:43:52 by hguillau          #+#    #+#              #
-#    Updated: 2023/04/21 17:10:06 by tpaufert         ###   ########.fr        #
+#    Updated: 2023/04/24 10:22:09 by tpaufert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,13 +21,12 @@ NAME    	=	minishell
 
 LIBS		=	./src/libft/
 
-#RL			=	-L/opt/homebrew/opt/readline/lib -lreadline 
-
 ifeq ($(USER), tpaufert)
 RL			=	-L/Users/$(USER)/.brew/Cellar/readline/8.2.1/lib -lreadline
 else
-RL			=
+RL			=	-L/opt/homebrew/opt/readline/lib -lreadline
 endif
+
 CC      	=	gcc
 
 RM      	=	rm -f
