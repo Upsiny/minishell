@@ -21,9 +21,11 @@ NAME    	=	minishell
 
 LIBS		=	./src/libft/
 
-RL			=	-L/opt/homebrew/opt/readline/lib -lreadline 
-
-#RL			=	-L/Users/tpaufert/.brew/Cellar/readline/8.2.1/lib -lreadline
+ifeq ($(USER), tpaufert)
+RL			=	-L/Users/$(USER)/.brew/Cellar/readline/8.2.1/lib -lreadline
+else
+RL			=	-L/opt/homebrew/opt/readline/lib -lreadline
+endif
 
 CC      	=	gcc
 
