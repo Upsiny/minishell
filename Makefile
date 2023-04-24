@@ -23,7 +23,7 @@ LIBS		=	./src/libft/
 
 RL			=	-L/opt/homebrew/opt/readline/lib -lreadline 
 
-#RL			=	-lreadline ./vendor/libreadline.a
+#RL			=	-L/Users/tpaufert/.brew/Cellar/readline/8.2.1/lib -lreadline
 
 CC      	=	gcc
 
