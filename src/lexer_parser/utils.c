@@ -1,36 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   signaux.c                                          :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/24 10:23:59 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/04/24 13:44:28 by tpaufert         ###   ########.fr       */
+/*   Created: 2023/04/24 14:05:13 by tpaufert          #+#    #+#             */
+/*   Updated: 2023/04/24 14:31:25 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <readline/readline.h>
-#include <readline/history.h>
 
-void	rl_replace_line(const char *text, int clear_undo);
-
-void	ft_ctrl_c(int sig)
+int	ft_count_tab(char **tab)
 {
-	if (sig == 2)
+	int	i;
+
+	i = 0;
+	while (tab[i] != NULL)
+		i++;
+	return (i);
+}
+
+char	**my_split(char *s)
+{
+	char	**str;
+	int		i;
+	int		j;
+
+	str = ft_split(s, ' ');
+	i = ft_count_tab(str);
+	j = 0;
+	while (str[j] != NULL)
 	{
-		printf("\n");
-		rl_replace_line("", 0);
-		rl_on_new_line();
-		rl_redisplay();
+		str[j] = *ft_split(str[j], '\t');
+		j++;
 	}
-	return ;
+	j = 0;
+	while (str[j] != NULL)
+	{
+		printf("%s\n", str[j]);
+		j++;
+	}
+	return (str);
 }
-
-void	ft_signaux(void)
-{
-	signal(SIGINT, ft_ctrl_c);
-}
+je	sui    roux			et beau

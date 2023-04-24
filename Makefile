@@ -6,13 +6,14 @@
 #    By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/31 11:43:52 by hguillau          #+#    #+#              #
-#    Updated: 2023/04/24 10:22:09 by tpaufert         ###   ########.fr        #
+#    Updated: 2023/04/24 13:51:13 by tpaufert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS    	=	src/main.c						\
 				src/signaux/signaux.c			\
 				src/lexer_parser/init.c			\
+				src/lexer_parser/utils.c		\
 				src/errors/error.c				\
 
 OBJS    	=	${SRCS:.c=.o}
