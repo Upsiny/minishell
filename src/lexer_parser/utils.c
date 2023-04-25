@@ -44,4 +44,3 @@ char	**my_split(char *s)
 	}
 	return (str);
 }
-je	sui    roux			et beau
