@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/04/24 14:12:24 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/04/25 11:57:22 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,16 @@ typedef struct s_data
 	t_cmd	*st_cmd;
 	pid_t	pid;
 	char	*prompt;
+	char	**cp_env;
 }	t_data;
 
 //////////// Lexer_Parser //////////////////
 
 t_data	*init_struct(char **envp);
+char	**ft_tabcpy(char **tab);
 char	**my_split(char *s);
 
-//////////// Signaux /////////////////
+//////////// Signaux ////////////////
 
 void	ft_signaux(void);
 
