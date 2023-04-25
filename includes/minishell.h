@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/04/25 11:57:22 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/04/25 15:57:32 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ typedef struct s_data
 
 t_data	*init_struct(char **envp);
 char	**ft_tabcpy(char **tab);
-char	**my_split(char *s);
+char	*verif_pipes(char *prompt);
+char	*verif_pipes(char *prompt);
 
 //////////// Signaux ////////////////
 
