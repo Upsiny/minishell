@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/04/25 15:57:32 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/04/26 17:01:32 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,16 @@ typedef struct s_data
 	pid_t	pid;
 	char	*prompt;
 	char	**cp_env;
+	enum
+	{
+		TOKEN_ID,
+		TOKEN_PIPE,
+		TOKEN_STRING,
+		TOKEN_SQUOTE,
+		TOKEN_DQUOTE,
+		TOKEN_DOLLAR,
+		TOKEN_REDIR,
+	}	e_type;
 }	t_data;
 
 //////////// Lexer_Parser //////////////////
