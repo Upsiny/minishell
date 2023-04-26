@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 10:23:44 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/04/25 16:04:48 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/04/26 14:55:11 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,18 @@ int	main(int ac, char **av, char **envp)
 			printf("exit\n");
 			exit(0);
 		}
-//		check_line(data); //check la ligne du prompt;
-//		verif_cmdquotes(data); //check les cotes des cmds;
-		data->prompt = verif_pipes(data->prompt); //check les pipes du prompt
+//		check_line(data); //check la ligne du prompt si $ est present;
+//		verif_cmdquotes(data); //gerer les cotes en pleinmilieux des cmds;
+		data->prompt = verif_pipes(data->prompt); //check les doubles pipes du prompt
 		if (data->prompt != '\0')
 		{
 			add_history(data->prompt);
 			system(data->prompt);
-			data->st_cmd->cmd = my_split(data->prompt); //split modifier pour minishell, on enregistre les cmds...
+			data->st_cmd->cmd = my_split(data->prompt); //transformer le char ** en structure de cmd;
 //			if (data->cmd != NULL) //!! actions du minishell !!
 //			{
-//				check_cmd(data.cmd);//controle des cmds -> rapport aux builtins.
-//				redir_pipe(data, data.cmd);//actions pipes et execve des builtins... MINISHELL QUOI
+//				do_cmd(data.cmd);//controle des cmds -> rapport aux builtins, ou, commandes existantes du PATH;
+//				redir_pipe(data, data.cmd);//fonction qui gere les redir si il y a des pipes et plusieurs cmds;
 //				free_cmd(data.cmd);//fonction free cmds
 //			}
 		}

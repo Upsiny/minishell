@@ -6,24 +6,53 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:40:32 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/04/25 16:21:17 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/04/26 14:43:38 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
 
+//est-ce que le char de str[i] est dans des quotes fermes ou non:
+int	ft_closed_quote(char *s, int i)
+{
+	int	closed_quote;
+	int	j;
+
+	closed_quote = 0;
+	j = 0;
+	while (j <= i)
+	{
+		if (s[j] == '\'' || s[j] == '"')
+			closed_quote = (closed_quote + 1) % 2;
+		j++;
+	}
+	return (closed_quote);
+}
+
+//supprime les char en double qui ne sont pas dans les doubles quotes:
 char	*remove_double_char_quote(char *str, char c)
 {
 	char	*new_line;
 	int		i;
 	int		j;
 
-	new_line = NULL;
+	i = ft_strlen(str) + 1;
+	new_line = ft_calloc(i, sizeof(*new_line));
 	i = 0;
-	j = ft_strlen(str);
-	return (new_line)
+	j = 0;
+	while (str[i])
+	{
+		if ((str[i] != c && str[i + 1] != c) || ft_closed_quote(str, i) == 1)
+		{
+			new_line[j] = str[i];
+			j++;
+		}
+		i++;
+	}
+	return (new_line);
 }
 
+//retourne 1 si '| |':
 int	is_there_double_pipe(char *str)
 {
 	int	i;
@@ -44,6 +73,7 @@ int	is_there_double_pipe(char *str)
 	return (0);
 }
 
+// va retourner un prompt vide si le pipe est tout devant, a la fin, ou en double
 char	*verif_pipes(char *prompt)
 {
 	char	*new_prompt;
