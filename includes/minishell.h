@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/04/26 17:01:32 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/04/27 11:54:42 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,22 @@ typedef struct s_cmd
 	char	**stdout;
 }	t_cmd;
 
+typedef struct s_list
+{
+	char			*content;
+	int				token_type;
+	int				index;
+	struct s_list	*next;
+	struct s_list	*prev;
+}	t_list;
+
 typedef struct s_data
 {
 	t_cmd	*st_cmd;
 	pid_t	pid;
 	char	*prompt;
 	char	**cp_env;
+	t_list	*s_lex;;
 	enum
 	{
 		TOKEN_ID,
@@ -46,14 +56,23 @@ typedef struct s_data
 		TOKEN_DOLLAR,
 		TOKEN_REDIR,
 	}	e_type;
+	int		lexer_check;
+	char	lexer_char;
 }	t_data;
 
 //////////// Lexer_Parser //////////////////
 
 t_data	*init_struct(char **envp);
 char	**ft_tabcpy(char **tab);
-char	*verif_pipes(char *prompt);
-char	*verif_pipes(char *prompt);
+void	lexer_advance(t_data *data);
+void	init_lexer(t_data *data);
+void	lexer_work(t_data *data);
+void	ft_lexer_alpha(t_data *data);
+void	ft_lexer_quotes(t_data *data);
+void	ft_lexer_redir(t_data *data);
+void	ft_lexer_option(t_data *data);
+void	ft_lexer_dollar(t_data *data);
+//char	*verif_pipes(char *prompt);
 
 //////////// Signaux ////////////////
 

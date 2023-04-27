@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 16:11:27 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/04/25 11:54:45 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/04/27 10:39:38 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ t_data	*init_struct(char **envp)
 	t_data	*data;
 
     data = malloc(sizeof(t_data));
+	if (!data)
+		ft_error_msg("malloc error");
     if (envp[0] == NULL)
         printf("...");
     else
