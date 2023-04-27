@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   lexer_alpha.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpaufert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/02 20:52:35 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/04/27 15:21:09 by tpaufert         ###   ########.fr       */
+/*   Created: 2023/04/27 14:17:23 by tpaufert          #+#    #+#             */
+/*   Updated: 2023/04/27 16:02:45 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/minishell.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lexer_alpha(t_data *data)
 {
-	if (!lst)
-		return (0);
-	while (lst->next)
+	int	i;
+	int j;
+
+	i = 0;
+	j = data->lexer_check;
+	while (ft_isalpha(data->lexer_char))
 	{
-		lst = lst->next;
+		i++;
+		lexer_advance(data);
 	}
-	return (lst);
+	implement_list(data, TOKEN_STRING, i, j);
+	data->index_lexer++;
 }

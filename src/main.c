@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 10:23:44 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/04/27 11:16:29 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/04/27 15:22:31 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int ac, char **av, char **envp)
 			printf("exit\n");
 			exit(0);
 		}
-		inti_lexer(data);
+		init_lexer(data);
 		lexer_work(data);
 //		check_line(data); //check la ligne du prompt si $ est present;
 //		verif_cmdquotes(data); //gerer les cotes en pleinmilieux des cmds;

@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 16:14:17 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/03/14 18:09:20 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:02:53 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,11 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 typedef struct s_list
 {
-	void			*content;
+	char			*content;
+	int				token_type;
+	int				index;
 	struct s_list	*next;
+	struct s_list	*prev;
 }					t_list;
 
 t_list	*ft_lstnew(void *content);

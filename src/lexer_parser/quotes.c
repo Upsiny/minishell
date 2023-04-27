@@ -6,12 +6,12 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:15:45 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/04/27 11:37:11 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/04/27 15:50:31 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
-
+/*
 // mettre dans le makefile et dans le .h
 
 void	ft_double_quotes(t_data *data, int index)
@@ -40,4 +40,4 @@ void	verif_cmdquotes(t_data *data)
 			ft_simple_quotes(data, i);
 		i++;
 	}
-}
+}*/
