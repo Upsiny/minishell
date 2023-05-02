@@ -20,6 +20,7 @@ void	error_lexer(t_data *data, char *msg)
 	data->prompt = "";
 	data->index_lexer = 0;
 	data->lexer_check = 0;
+	data->lexer_char = data->prompt[data->lexer_check];
 	free(data->s_lex);
 }
 

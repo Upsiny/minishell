@@ -12,15 +12,15 @@
 
 SRCS    	=	src/main.c						\
 				src/signaux/signaux.c			\
+				src/errors/error.c				\
 				src/lexer_parser/init.c			\
 				src/lexer_parser/utils.c		\
 				src/lexer_parser/lexer.c		\
 				src/lexer_parser/lexer_alpha.c	\
 				src/lexer_parser/quotes.c		\
 				src/lexer_parser/redir.c		\
-				src/lexer_parser/dollar.c		\
+#				src/lexer_parser/dollar.c		\
 				src/lexer_parser/option.c		\
-				src/errors/error.c				\
 
 OBJS    	=	${SRCS:.c=.o}
 

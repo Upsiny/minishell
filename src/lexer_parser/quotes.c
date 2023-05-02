@@ -20,7 +20,7 @@ int	ft_check_endquote(t_data *data, char c)
 	int	j;
 
 	i = 1;
-	j = data->index_lexer;
+	j = data->lexer_check;
 	while (data->prompt[j])
 	{
 		i++;
@@ -39,7 +39,7 @@ void	ft_simple_quotes(t_data *data)
 	if (ft_check_endquote(data, '\'') != 0)
 	{
 		i = ft_check_endquote(data, '\'');
-		implement_list(data, TOKEN_SQUOTE, i, data->index_lexer);
+		implement_list(data, TOKEN_SQUOTE, i, data->lexer_check);
 		while (i)
 		{
 			lexer_advance(data);
@@ -58,7 +58,7 @@ void	ft_double_quotes(t_data *data)
 	if (ft_check_endquote(data, '\"') != 0)
 	{
 		i = ft_check_endquote(data, '\"');
-		implement_list(data, TOKEN_DQUOTE, i, data->index_lexer);
+		implement_list(data, TOKEN_DQUOTE, i, data->lexer_check);
 		while (i)
 		{
 			lexer_advance(data);
@@ -75,4 +75,5 @@ void	ft_lexer_quotes(t_data *data)
 		ft_double_quotes(data);
 	else if (data->lexer_char == '\'')
 		ft_simple_quotes(data);
+	data->index_lexer++;
 }
