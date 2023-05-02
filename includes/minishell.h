@@ -84,5 +84,6 @@ void	ft_signaux(void);
 //////////// Erreurs ///////////////
 
 void	ft_error_msg(char *msg);
+void	error_lexer(t_data *data, char *msg);
 
 #endif
