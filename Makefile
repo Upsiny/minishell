@@ -6,13 +6,14 @@
 #    By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/31 11:43:52 by hguillau          #+#    #+#              #
-#    Updated: 2023/04/27 16:02:50 by tpaufert         ###   ########.fr        #
+#    Updated: 2023/05/02 14:52:03 by tpaufert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS    	=	src/main.c						\
 				src/signaux/signaux.c			\
 				src/errors/error.c				\
+				src/builtins/pwd.c				\
 				src/lexer_parser/init.c			\
 				src/lexer_parser/utils.c		\
 				src/lexer_parser/lexer.c		\
