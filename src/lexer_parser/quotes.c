@@ -11,33 +11,68 @@
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
-/*
+
 // mettre dans le makefile et dans le .h
 
-void	ft_double_quotes(t_data *data, int index)
-{
-	// travail avec les token : init du token d_quotes
-}
-
-void	ft_simple_quotes(t_data *data, int index)
-{
-	// travail avec les token : init du token s_quote
-	// atttention a la signification du simple quote
-}
-
-void	verif_cmdquotes(t_data *data)
+int	ft_check_endquote(t_data *data, char c)
 {
 	int	i;
 	int	j;
 
-	i = 0;
-	j = ft_strlen(data->prompt);
-	while (i <= j)
+	i = 1;
+	j = data->index_lexer;
+	while (data->prompt[j])
 	{
-		if (data->prompt[i] == '\"')
-			ft_double_quotes(data, i);
-		else if (data->prompt[i] == '\'')
-			ft_simple_quotes(data, i);
 		i++;
+		j++;
+		if (data->prompt[j] == c)
+			return (i);
 	}
-}*/
+	return (0);
+}
+
+void	ft_simple_quotes(t_data *data)
+{
+	int	i;
+
+	i = 0;
+	if (ft_check_endquote(data, '\'') != 0)
+	{
+		i = ft_check_endquote(data, '\'');
+		implement_list(data, TOKEN_SQUOTE, i, data->index_lexer);
+		while (i)
+		{
+			lexer_advance(data);
+			i--;
+		}
+	}
+	else
+		error_lexer(data, "no ended quote");
+}
+
+void	ft_double_quotes(t_data *data)
+{
+	int	i;
+
+	i = 0;
+	if (ft_check_endquote(data, '\"') != 0)
+	{
+		i = ft_check_endquote(data, '\"');
+		implement_list(data, TOKEN_DQUOTE, i, data->index_lexer);
+		while (i)
+		{
+			lexer_advance(data);
+			i--;
+		}
+	}
+	else
+		error_lexer(data, "no ended quote");
+}
+
+void	ft_lexer_quotes(t_data *data)
+{
+	if (data->lexer_char == '\"')
+		ft_double_quotes(data);
+	else if (data->lexer_char == '\'')
+		ft_simple_quotes(data);
+}
