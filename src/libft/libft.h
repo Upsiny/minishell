@@ -63,7 +63,6 @@ typedef struct s_list
 	int				token_type;
 	int				index;
 	struct s_list	*next;
-	struct s_list	*prev;
 }					t_list;
 
 t_list	*ft_lstnew(void *content);

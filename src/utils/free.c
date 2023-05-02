@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/24 14:05:13 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/04/25 15:56:12 by tpaufert         ###   ########.fr       */
+/*   Created: 2023/05/02 15:41:13 by tpaufert          #+#    #+#             */
+/*   Updated: 2023/05/02 15:43:12 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
 
-void	print_list(t_data *data)
+void	*free_ptr(void *ptr)
 {
-	printf("lexer result : \n");
-	while (data->s_lex)
-	{
-		if (data->s_lex->content)
-			printf("%s\n", data->s_lex->content);
-		data->s_lex = data->s_lex->next;
-	}
+	if (ptr)
+		free(ptr);
+	return (NULL);
 }

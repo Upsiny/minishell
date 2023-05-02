@@ -19,8 +19,12 @@ void	ft_lexer_alpha(t_data *data)
 
 	i = 0;
 	j = data->lexer_check;
-	while (ft_isalpha(data->lexer_char))
+	while (data->prompt[j + i])
 	{
+		if (data->lexer_char == '\'' || data->lexer_char == '\"'
+			|| data->lexer_char == '|' || data->lexer_char == '<'
+			|| data->lexer_char == '>') //ajouter les whitespace
+			break ;
 		i++;
 		lexer_advance(data);
 	}

@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 12:43:16 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/05/02 14:55:17 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:44:09 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@ void	pwd(void)
 {
 	char	*cwd;
 
-	cwd = getcwd(NULL, 2048);
+	cwd = getcwd(NULL, sizeof(char *));
 	if (cwd != NULL)
+	{
 		printf("%s\n", cwd);
+		cwd = free_ptr(cwd);
+	}
 	else
 		perror("pwd");
-	if (cwd)
-		free(cwd);
 }

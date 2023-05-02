@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/05/02 14:39:49 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:45:00 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,10 @@
 
 enum
 {
-	TOKEN_ID,
 	TOKEN_PIPE,
 	TOKEN_STRING,
 	TOKEN_SQUOTE,
 	TOKEN_DQUOTE,
-	TOKEN_DOLLAR,
-	TOKEN_OPTION,
 	TOKEN_REDIR,
 }	e_type;
 
@@ -75,6 +72,7 @@ void	ft_lexer_quotes(t_data *data);
 void	ft_lexer_redir(t_data *data);
 void	ft_lexer_option(t_data *data);
 void	ft_lexer_dollar(t_data *data);
+void	ft_lexer_pipe(t_data *data);
 void	implement_list(t_data *data, int type, int index, int start);
 //char	*verif_pipes(char *prompt);
 
@@ -90,5 +88,10 @@ void	error_lexer(t_data *data, char *msg);
 //////////// BUILTINS //////////////
 
 void	pwd(void);
+
+//////////// UTILS /////////////////
+
+void	*free_ptr(void *ptr);
+void	print_list(t_data *data);
 
 #endif
