@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 10:23:44 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/05/02 14:42:42 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:18:21 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int ac, char **av, char **envp)
 		ft_signaux();
 		data->pid = -1;
 		data->prompt = readline("minishell de mort (҂◡_◡) > ");
-		if (ft_strncmp(data->prompt, "pwd", 3) == 0)
+		if (ft_strncmp(data->prompt, "pwd", 3) == 0 && ft_strlen(data->prompt) == 3)
 			pwd();
 		if (data->prompt == NULL)
 		{

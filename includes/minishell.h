@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/05/02 14:39:49 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:45:00 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,9 @@ void	error_lexer(t_data *data, char *msg);
 //////////// BUILTINS //////////////
 
 void	pwd(void);
+
+//////////// UTILS /////////////////
+
+void	*free_ptr(void *ptr);
 
 #endif
