@@ -60,10 +60,8 @@ void	lexer_work(t_data *data)
 			ft_lexer_quotes(data);
 		if (data->lexer_char == '<' || data->lexer_char == '>')
 			ft_lexer_redir(data);
-	/*	if (data->lexer_char == '-')
-			ft_lexer_option(data);
-		if (data->lexer_char == '$')
-			ft_lexer_dollar(data);*/
+//		if (data->lexer_char == '|')
+//			ft_lexer_pipe(data);
 		if (data->lexer_char == ' ')
 			lexer_advance(data);
 	}
