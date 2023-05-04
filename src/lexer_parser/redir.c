@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:35:30 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/05/04 13:35:31 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/05/04 14:21:39 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	count_redir(t_data *data, char c)
 {
-	int i;
+	int	i;
 	int	j;
 
 	i = 0;
@@ -45,7 +45,7 @@ int	ft_lexer_redir(t_data *data)
 		i = count_redir(data, data->lexer_char);
 	else
 	{
-		error_lexer(data, "too many redir");
+		error_lexer(data, "syntax error near unexpected token `>'");
 		return (1);
 	}
 	implement_list(data, TOKEN_REDIR, i, j);

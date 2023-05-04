@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 14:05:13 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/04/25 15:56:12 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/05/04 14:32:40 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,10 @@ void	print_list(t_data *data)
 	{
 		if (data->s_lex->content)
 		{
-			printf("(%zu) ", ft_strlen(data->s_lex->content));
-			printf("%s\n", data->s_lex->content);
+			printf("index : %d | ", data->s_lex->index);
+			printf("token type : %d | ", data->s_lex->token_type);
+			printf("len : (%zu) | ", ft_strlen(data->s_lex->content));
+			printf("content : %s\n", data->s_lex->content);
 		}
 		data->s_lex = data->s_lex->next;
 	}

@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:37:58 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/05/04 13:37:59 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/05/04 14:23:47 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_lexer_pipe(t_data *data)
 	j = data->lexer_check;
 	if (data->prompt[j + 1] == data->lexer_char)
 	{
-		error_lexer(data, "Syntax Error");
+		error_lexer(data, "syntax error near unexpected token `||'");
 		return (1);
 	}
 	else

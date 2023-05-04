@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/05/02 15:45:00 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/05/04 14:27:39 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ typedef struct s_cmd
 	int				token_type;
 	int				index;
 	struct s_lexer	*next;
-	struct s_lexer	*prev;
 }	t_lexer;*/
 
 typedef struct s_data
