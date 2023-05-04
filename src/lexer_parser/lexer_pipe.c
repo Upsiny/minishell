@@ -1,56 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   redir.c                                            :+:      :+:    :+:   */
+/*   lexer_pipe.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 13:35:30 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/05/04 13:35:31 by tpaufert         ###   ########.fr       */
+/*   Created: 2023/05/04 13:37:58 by tpaufert          #+#    #+#             */
+/*   Updated: 2023/05/04 13:37:59 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
 
-int	count_redir(t_data *data, char c)
+int	ft_lexer_pipe(t_data *data)
 {
-	int i;
 	int	j;
 
-	i = 0;
 	j = data->lexer_check;
-	if (data->prompt[j + 1] == c)
+	if (data->prompt[j + 1] == data->lexer_char)
 	{
-		while (data->prompt[j] == c)
-		{
-			i++;
-			j++;
-		}
-		return (i);
+		error_lexer(data, "Syntax Error");
+		return (1);
 	}
 	else
 	{
-		return (1);
-	}
-}
-
-int	ft_lexer_redir(t_data *data)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = data->lexer_check;
-	if (count_redir(data, data->lexer_char) <= 2)
-		i = count_redir(data, data->lexer_char);
-	else
-	{
-		error_lexer(data, "too many redir");
-		return (1);
-	}
-	implement_list(data, TOKEN_REDIR, i, j);
-	data->index_lexer++;
-	while (i--)
+		implement_list(data, TOKEN_PIPE, 1, j);
+		data->index_lexer++;
 		lexer_advance(data);
-	return (0);
+		return (0);
+	}
 }

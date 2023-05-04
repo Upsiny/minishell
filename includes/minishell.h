@@ -25,13 +25,10 @@
 
 enum
 {
-	TOKEN_ID,
 	TOKEN_PIPE,
 	TOKEN_STRING,
 	TOKEN_SQUOTE,
 	TOKEN_DQUOTE,
-	TOKEN_DOLLAR,
-	TOKEN_OPTION,
 	TOKEN_REDIR,
 }	e_type;
 
@@ -69,12 +66,11 @@ t_data	*init_struct(char **envp);
 char	**ft_tabcpy(char **tab);
 void	lexer_advance(t_data *data);
 void	init_lexer(t_data *data);
-void	lexer_work(t_data *data);
+int		lexer_work(t_data *data);
 void	ft_lexer_alpha(t_data *data);
-void	ft_lexer_quotes(t_data *data);
-void	ft_lexer_redir(t_data *data);
-void	ft_lexer_option(t_data *data);
-void	ft_lexer_dollar(t_data *data);
+int		ft_lexer_quotes(t_data *data);
+int		ft_lexer_redir(t_data *data);
+int		ft_lexer_pipe(t_data *data);
 void	implement_list(t_data *data, int type, int index, int start);
 //char	*verif_pipes(char *prompt);
 
@@ -94,5 +90,7 @@ void	pwd(void);
 //////////// UTILS /////////////////
 
 void	*free_ptr(void *ptr);
+void	print_list(t_data *data);
+int		ft_isspace(char c);
 
 #endif

@@ -27,6 +27,7 @@ int	main(int ac, char **av, char **envp)
 		ft_signaux();
 		data->pid = -1;
 		data->prompt = readline("minishell de mort (҂◡_◡) > ");
+		add_history(data->prompt);
 		if (ft_strncmp(data->prompt, "pwd", 3) == 0 && ft_strlen(data->prompt) == 3)
 			pwd();
 		if (data->prompt == NULL)
@@ -35,13 +36,15 @@ int	main(int ac, char **av, char **envp)
 			exit(0);
 		}
 		init_lexer(data);
-		lexer_work(data);
+		if (!lexer_work(data))
+		{
+			print_list(data); // mettre tout la fin dans ces quotes
+		}
 //		check_line(data); //check la ligne du prompt si $ est present;
 //		verif_cmdquotes(data); //gerer les cotes en pleinmilieux des cmds;
 //		data->prompt = verif_pipes(data->prompt); //check les doubles pipes du prompt
 //		if (data->prompt != '\0')
 //		{
-//			add_history(data->prompt);
 //			data->st_cmd->cmd = my_split(data->prompt); //transformer le char ** en structure de cmd;
 //			if (data->cmd != NULL) //!! actions du minishell !!
 //			{

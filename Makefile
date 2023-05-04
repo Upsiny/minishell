@@ -6,7 +6,7 @@
 #    By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/31 11:43:52 by hguillau          #+#    #+#              #
-#    Updated: 2023/05/02 15:48:51 by tpaufert         ###   ########.fr        #
+#    Updated: 2023/05/04 13:38:28 by tpaufert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRCS    	=	src/main.c						\
 				src/lexer_parser/lexer_alpha.c	\
 				src/lexer_parser/quotes.c		\
 				src/lexer_parser/redir.c		\
+				src/lexer_parser/lexer_pipe.c	\
 				src/utils/free.c				\
 
 OBJS    	=	${SRCS:.c=.o}
