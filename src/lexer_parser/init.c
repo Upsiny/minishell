@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 16:11:27 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/04/27 10:39:38 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/05/04 14:45:24 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	**ft_tabcpy(char **tab)
 {
 	char	**tmp;
 	int		i;
-    int     j;
+	int		j;
 
 	i = 0;
 	j = 0;
@@ -37,13 +37,13 @@ t_data	*init_struct(char **envp)
 {
 	t_data	*data;
 
-    data = malloc(sizeof(t_data));
+	data = malloc(sizeof(t_data));
 	if (!data)
 		ft_error_msg("malloc error");
-    if (envp[0] == NULL)
-        printf("...");
-    else
-        data->cp_env = ft_tabcpy(envp);
-    data->pid = -1;
+	if (envp[0] == NULL)
+		printf("...");
+	else
+		data->cp_env = ft_tabcpy(envp);
+	data->pid = -1;
 	return (data);
 }

@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 10:23:44 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/05/02 15:18:21 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/05/04 15:14:54 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	main(int ac, char **av, char **envp)
 	(void)*av;
 	data = init_struct(envp);
 	if (ac != 1)
-		ft_error_msg("no arguments accepted"); // passer par une fonction erreur
+		ft_error_msg("no arguments accepted");
 	if (!data)
-		ft_error_msg("Malloc Error"); // passer par une fonction erreur
+		ft_error_msg("Malloc Error");
 	while (1)
 	{
 		ft_signaux();
@@ -36,7 +36,7 @@ int	main(int ac, char **av, char **envp)
 			exit(0);
 		}
 		init_lexer(data);
-		if (!lexer_work(data))
+		if (!lexer_work(data))// Dans token type strings: supprimer les quotes (si circuit fermer)
 		{
 			print_list(data); // mettre tout la fin dans ces quotes
 		}
