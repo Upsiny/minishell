@@ -22,7 +22,7 @@ int	count_redir(t_data *data, char c)
 	}
 }
 
-void	ft_lexer_redir(t_data *data)
+int	ft_lexer_redir(t_data *data)
 {
 	int	i;
 	int	j;
@@ -32,9 +32,13 @@ void	ft_lexer_redir(t_data *data)
 	if (count_redir(data, data->lexer_char) <= 2)
 		i = count_redir(data, data->lexer_char);
 	else
+	{
 		error_lexer(data, "too many redir");
+		return (1);
+	}
 	implement_list(data, TOKEN_REDIR, i, j);
 	data->index_lexer++;
 	while (i--)
 		lexer_advance(data);
+	return (0);
 }

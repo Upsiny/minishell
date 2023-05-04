@@ -36,8 +36,10 @@ int	main(int ac, char **av, char **envp)
 			exit(0);
 		}
 		init_lexer(data);
-		lexer_work(data);
-		print_list(data);
+		if (!lexer_work(data))
+		{
+			print_list(data); // mettre tout la fin dans ces quotes
+		}
 //		check_line(data); //check la ligne du prompt si $ est present;
 //		verif_cmdquotes(data); //gerer les cotes en pleinmilieux des cmds;
 //		data->prompt = verif_pipes(data->prompt); //check les doubles pipes du prompt

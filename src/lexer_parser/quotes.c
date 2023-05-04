@@ -31,7 +31,7 @@ int	ft_check_endquote(t_data *data, char c)
 	return (0);
 }
 
-void	ft_simple_quotes(t_data *data)
+int	ft_simple_quotes(t_data *data)
 {
 	int	i;
 
@@ -45,12 +45,16 @@ void	ft_simple_quotes(t_data *data)
 			lexer_advance(data);
 			i--;
 		}
+		return (0);
 	}
 	else
+	{
 		error_lexer(data, "no ended quote");
+		return (1);
+	}
 }
 
-void	ft_double_quotes(t_data *data)
+int	ft_double_quotes(t_data *data)
 {
 	int	i;
 
@@ -64,16 +68,27 @@ void	ft_double_quotes(t_data *data)
 			lexer_advance(data);
 			i--;
 		}
+		return (0);
 	}
 	else
+	{
 		error_lexer(data, "no ended quote");
+		return (1);
+	}
 }
 
-void	ft_lexer_quotes(t_data *data)
+int	ft_lexer_quotes(t_data *data)
 {
 	if (data->lexer_char == '\"')
-		ft_double_quotes(data);
+	{
+		if (ft_double_quotes(data))
+			return (1);
+	}
 	else if (data->lexer_char == '\'')
-		ft_simple_quotes(data);
+	{
+		if (ft_simple_quotes(data))
+			return (1);
+	}
 	data->index_lexer++;
+	return (0);
 }

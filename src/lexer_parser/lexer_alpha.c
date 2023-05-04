@@ -23,7 +23,7 @@ void	ft_lexer_alpha(t_data *data)
 	{
 		if (data->lexer_char == '\'' || data->lexer_char == '\"'
 			|| data->lexer_char == '|' || data->lexer_char == '<'
-			|| data->lexer_char == '>') //ajouter les whitespace
+			|| data->lexer_char == '>' || !ft_isspace(data->lexer_char)) //ajouter les whitespace
 			break ;
 		i++;
 		lexer_advance(data);

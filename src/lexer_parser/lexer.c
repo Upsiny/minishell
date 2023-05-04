@@ -46,21 +46,31 @@ void	lexer_advance(t_data *data)
 	}
 }
 
-void	lexer_work(t_data *data)
+int	lexer_work(t_data *data)
 {
 	while (data->lexer_check < (int)ft_strlen(data->prompt))
 	{
 		if (data->lexer_char == '\"' || data->lexer_char == '\'')
-			ft_lexer_quotes(data);
+		{
+			if (ft_lexer_quotes(data))
+				return (1);
+		}
 		else if (data->lexer_char == '<' || data->lexer_char == '>')
-			ft_lexer_redir(data);
+		{
+			if (ft_lexer_redir(data))
+				return (1);
+		}
 		else if (data->lexer_char == '|')
-			ft_lexer_pipe(data);
-//		else if (data->lexer_char == ' ') //ajouter les whitespace
-//			lexer_advance(data);
+		{
+			if (ft_lexer_pipe(data))
+				return (1);
+		}
+		else if (!ft_isspace(data->lexer_char))
+			lexer_advance(data);
 		else
 			ft_lexer_alpha(data);
 	}
+	return (0);
 }
 
 void	init_lexer(t_data *data)
