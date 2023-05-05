@@ -6,7 +6,7 @@
 #    By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/31 11:43:52 by hguillau          #+#    #+#              #
-#    Updated: 2023/05/04 13:38:28 by tpaufert         ###   ########.fr        #
+#    Updated: 2023/05/05 11:54:05 by tpaufert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,8 @@ SRCS    	=	src/main.c						\
 				src/signaux/signaux.c			\
 				src/errors/error.c				\
 				src/builtins/pwd.c				\
+				src/builtins/cd.c				\
+				src/builtins/exec_builtins.c	\
 				src/lexer_parser/init.c			\
 				src/lexer_parser/utils.c		\
 				src/lexer_parser/lexer.c		\

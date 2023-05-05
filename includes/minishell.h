@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/05/04 14:27:39 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/05/05 15:07:36 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ enum
 
 typedef struct s_cmd
 {
-	char	**cmd;
+	char	**cmd; //2 string max (la commande et option eventuel)
 	char	**stdin;
 	char	**stdout;
 }	t_cmd;
@@ -84,7 +84,10 @@ void	error_lexer(t_data *data, char *msg);
 
 //////////// BUILTINS //////////////
 
+void	exec_builtins(char **cmd);
 void	pwd(void);
+void	cd(char **cmd);
+void	cd_go_arg(char *arg);
 
 //////////// UTILS /////////////////
 

@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 10:23:44 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/05/04 15:14:54 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/05/05 15:06:51 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,17 @@ int	main(int ac, char **av, char **envp)
 		data->pid = -1;
 		data->prompt = readline("minishell de mort (҂◡_◡) > ");
 		add_history(data->prompt);
-		if (ft_strncmp(data->prompt, "pwd", 3) == 0 && ft_strlen(data->prompt) == 3)
-			pwd();
 		if (data->prompt == NULL)
 		{
 			printf("exit\n");
 			exit(0);
 		}
 		init_lexer(data);
+		data->st_cmd->cmd = ft_split(data->prompt, ' '); //A supprimer, juste pour test builtins
 		if (!lexer_work(data))// Dans token type strings: supprimer les quotes (si circuit fermer)
 		{
-			print_list(data); // mettre tout la fin dans ces quotes
+		//	print_list(data);
+			exec_builtins(data->st_cmd->cmd); // mettre tout la fin dans ces quotes
 		}
 //		check_line(data); //check la ligne du prompt si $ est present;
 //		verif_cmdquotes(data); //gerer les cotes en pleinmilieux des cmds;

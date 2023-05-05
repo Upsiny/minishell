@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lexer_alpha.c                                      :+:      :+:    :+:   */
+/*   exec_builtins.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/27 14:17:23 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/05/05 15:04:16 by tpaufert         ###   ########.fr       */
+/*   Created: 2023/05/05 11:43:29 by tpaufert          #+#    #+#             */
+/*   Updated: 2023/05/05 12:01:16 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
 
-void	ft_lexer_alpha(t_data *data)
+void	exec_builtins(char **cmd)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = data->lexer_check;
-	while (data->prompt[j + i])
-	{
-		if (data->lexer_char == '|' || data->lexer_char == '<'
-			|| data->lexer_char == '>' || !ft_isspace(data->lexer_char))
-			break ;
-		i++;
-		lexer_advance(data);
-	}
-	implement_list(data, TOKEN_STRING, i, j);
-	data->index_lexer++;
+	if ((ft_strncmp(cmd[0], "cd", 2)) == 0)
+		cd(cmd);
+	else if ((ft_strncmp(cmd[0], "pwd", 3)) == 0)
+		pwd();
 }
