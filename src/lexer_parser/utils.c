@@ -32,6 +32,8 @@ void	print_list(t_data *data)
 			printf("len : (%zu) | ", ft_strlen(data->s_lex->content));
 			printf("content : %s\n", data->s_lex->content);
 		}
+		else
+			printf("NULL\n");
 		data->s_lex = data->s_lex->next;
 	}
 }

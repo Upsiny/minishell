@@ -32,8 +32,9 @@ void	implement_list(t_data *data, int type, int index, int start)
 	}
 	new->token_type = type;
 	new->index = data->index_lexer;
-	new->next = (NULL);
 	ft_lstadd_back(&data->s_lex, new);
+	//print_list(data->s_lex);
+	new->next = (NULL);
 }
 
 void	lexer_advance(t_data *data)
