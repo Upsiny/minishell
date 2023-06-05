@@ -4,9 +4,7 @@ int	ft_parse_pipe(t_data *data, int index)
 {
 	int	last;
 
-	last = ft_lstsize(data->s_lex) - 2;
-	printf("index : %d\n", index);
-	printf("last : %d\n", last);
+	last = ft_lstsize(data->s_lex) - 1;
 	if (index == 0 || index == last)
 		return (1);
 	return (0);
