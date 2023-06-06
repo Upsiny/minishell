@@ -72,7 +72,7 @@ int		ft_lexer_redir(t_data *data);
 int		ft_lexer_pipe(t_data *data);
 void	implement_list(t_data *data, int type, int index, int start);
 //char	*verif_pipes(char *prompt);
-void	ft_check_lst(t_data *data);
+int		ft_check_lst(t_data *data);
 
 //////////// Signaux ////////////////
 
@@ -81,7 +81,7 @@ void	ft_signaux(void);
 //////////// Erreurs ///////////////
 
 void	ft_error_msg(char *msg);
-void	ft_error_parsing(char *msg);
+int		ft_error_parsing(char *msg, t_data *data);
 void	error_lexer(t_data *data, char *msg);
 
 //////////// BUILTINS //////////////

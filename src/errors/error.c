@@ -24,9 +24,11 @@ void	error_lexer(t_data *data, char *msg)
 	free(data->s_lex);
 }
 
-void	ft_error_parsing(char *msg)
+int	ft_error_parsing(char *msg, t_data *data)
 {
 	printf("%s\n", msg);
+	free_ptr(data->s_lex);
+	return (1);
 }
 
 void	ft_error_msg(char *msg)

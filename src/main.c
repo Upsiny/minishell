@@ -39,23 +39,13 @@ int	main(int ac, char **av, char **envp)
 		{
 	//		print_list(data); // erreur dans s_lex, le premier maillon a un content vide
 			ft_check_lst(data);
-			//exec_builtins(data->st_cmd->cmd); // mettre tout la fin dans ces quotes
+			//if (!ft_check_lst(data)) // securiter a valider quqnd les free seront fait !
+			//{
+				//exec_builtins(data->st_cmd->cmd); // mettre tout la fin dans ces quotes
+				//free_ptr(data->s_lex);
+			//}
 		}
-//		check_line(data); //check la ligne du prompt si $ est present;
-//		verif_cmdquotes(data); //gerer les cotes en pleinmilieux des cmds;
-//		data->prompt = verif_pipes(data->prompt); //check les doubles pipes du prompt
-//		if (data->prompt != '\0')
-//		{
-//			data->st_cmd->cmd = my_split(data->prompt); //transformer le char ** en structure de cmd;
-//			if (data->cmd != NULL) //!! actions du minishell !!
-//			{
-//				do_cmd(data.cmd);//controle des cmds -> rapport aux builtins, ou, commandes existantes du PATH;
-//				redir_pipe(data, data.cmd);//fonction qui gere les redir si il y a des pipes et plusieurs cmds;
-//				free_cmd(data.cmd);//fonction free cmds
-//			}
-//		}
-//		free(data->prompt);
+		free(data->prompt);
 	}
-//	clear_history();
 //	free_minishell(data);
 }
