@@ -86,7 +86,7 @@ void	error_lexer(t_data *data, char *msg);
 
 //////////// BUILTINS //////////////
 
-void	exec_builtins(char **cmd);
+void	exec_builtins(t_list s_lex);
 void	pwd(void);
 void	cd(char **cmd);
 void	cd_go_arg(char *arg);

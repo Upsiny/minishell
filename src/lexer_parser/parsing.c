@@ -6,10 +6,8 @@ int	ft_parse_pipe(t_data *data, int index)
 
 	last = ft_lstsize(data->s_lex) - 1;
 	if (index == 0 || index == last)
-	{
 		return (ft_error_parsing("syntax error near unexpected token `|'"
 					, data));
-	}
 	return (0);
 }
 
