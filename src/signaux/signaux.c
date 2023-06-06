@@ -30,7 +30,14 @@ void	ft_ctrl_c(int sig)
 	return ;
 }
 
+void	ft_ctrl_back(int sig)
+{
+	(void)sig;
+	rl_redisplay();
+}
+
 void	ft_signaux(void)
 {
 	signal(SIGINT, ft_ctrl_c);
+	signal(SIGQUIT, ft_ctrl_back);
 }
