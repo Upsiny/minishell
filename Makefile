@@ -6,25 +6,26 @@
 #    By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/31 11:43:52 by hguillau          #+#    #+#              #
-#    Updated: 2023/05/05 11:54:05 by tpaufert         ###   ########.fr        #
+#    Updated: 2023/06/07 16:42:20 by tpaufert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS    	=	src/main.c						\
-				src/signaux/signaux.c			\
-				src/errors/error.c				\
-				src/builtins/pwd.c				\
-				src/builtins/cd.c				\
-				src/builtins/exec_builtins.c	\
-				src/lexer_parser/init.c			\
-				src/lexer_parser/utils.c		\
-				src/lexer_parser/lexer.c		\
-				src/lexer_parser/lexer_alpha.c	\
-				src/lexer_parser/quotes.c		\
-				src/lexer_parser/redir.c		\
-				src/lexer_parser/lexer_pipe.c	\
-				src/lexer_parser/parsing.c		\
-				src/utils/free.c				\
+SRCS    	=	src/main.c							\
+				src/signaux/signaux.c				\
+				src/errors/error.c					\
+				src/builtins/pwd.c					\
+				src/builtins/cd.c					\
+				src/builtins/exec_builtins.c		\
+				src/lexer_parser/init.c				\
+				src/lexer_parser/utils.c			\
+				src/lexer_parser/lexer.c			\
+				src/lexer_parser/lexer_alpha.c		\
+				src/lexer_parser/quotes.c			\
+				src/lexer_parser/redir.c			\
+				src/lexer_parser/lexer_pipe.c		\
+				src/lexer_parser/parsing.c			\
+				src/utils/free.c					\
+				src/builtins/exec_builtins_utils.c	\
 
 OBJS    	=	${SRCS:.c=.o}
 

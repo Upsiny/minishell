@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 11:43:29 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/06/06 17:52:14 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/07 16:49:33 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,19 +36,19 @@ char	*recup_real_cmd(char *line)
 	return (tmp);
 }
 
-char	*check_cmd(char *line)
+char	*check_cmd(char *str)
 {
 	char	*real_cmd;
 	int		nb_slash;
 
-	nb_slash = ft_nb_slash(line);
+	nb_slash = ft_nb_slash(str);
 	real_cmd = NULL;
 	if (nb_slash >= 2)
 	{
-		if (line[0] == '/')
+		if (str[0] == '/')
 		{
-			if (access(line, R_OK) == 0)
-				real_cmd = recup_real_cmd(line);
+			if (access(str, R_OK) == 0)
+				real_cmd = recup_real_cmd(str);
 			else
 			{
 				real_cmd = NULL;
@@ -57,7 +57,7 @@ char	*check_cmd(char *line)
 		}
 	}
 	else if (nb_slash < 2)
-		real_cmd = ft_strdup(line);
+		real_cmd = ft_strdup(str);
 	return (real_cmd);
 }
 
@@ -86,20 +86,23 @@ void	verif_and_modif_cmd_if_slash_or_quote(char **cmd)
 	free(tmp);
 }
 
-void	verif_cmd_struct(t_cmd **cmd)
+void	verif_cmd_struct(char **cmd)
 {
 	int	i;
 
 	i = 0;
 	while (cmd[i])
 	{
-		verif_and_modif_cmd_if_slash_or_quote(cmd[i]);
+		verif_and_modif_cmd_if_slash_or_quote(&cmd[i]);
 		i++;
 	}
 }
 
 void	exec_builtins(char **cmd)
 {
+	int	i;
+
+	i = 0;
 	verif_cmd_struct(cmd);
 	if ((ft_strncmp(cmd[0], "cd", 2)) == 0)
 		cd(cmd);
