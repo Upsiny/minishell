@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:22:13 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/05/05 15:02:34 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/08 15:57:00 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	cd_go_home(void)
 	}	
 }
 
-void	cd(char **cmd)
+void	cd_builtin(char **cmd)
 {
 	if (cmd[1] == NULL || (cmd[1][0] == '~'
 		&& cmd[1][1] == '\0'))

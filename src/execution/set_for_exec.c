@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pwd.c                                              :+:      :+:    :+:   */
+/*   set_for_exec.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/27 12:43:16 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/06/08 15:56:53 by tpaufert         ###   ########.fr       */
+/*   Created: 2023/06/08 16:27:14 by tpaufert          #+#    #+#             */
+/*   Updated: 2023/06/08 16:28:21 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
 
-void	pwd_builtin(void)
+void	ft_set_path_and_execve(t_data *data, char **cmd)
 {
-	char	*cwd;
-
-	cwd = getcwd(NULL, sizeof(char *));
-	if (cwd != NULL)
-	{
-		printf("%s\n", cwd);
-		cwd = free_ptr(cwd);
-	}
-	else
-		perror("pwd");
+	
 }

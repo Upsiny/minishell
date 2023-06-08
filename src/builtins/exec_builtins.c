@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 11:43:29 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/06/07 16:49:33 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/08 16:17:50 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,14 +98,28 @@ void	verif_cmd_struct(char **cmd)
 	}
 }
 
-void	exec_builtins(char **cmd)
+void	exec_builtins(t_data *data, char **cmd)
 {
 	int	i;
 
 	i = 0;
 	verif_cmd_struct(cmd);
+	if (cmd->cmd[0] == NULL)
+			return ;
 	if ((ft_strncmp(cmd[0], "cd", 2)) == 0)
-		cd(cmd);
+		cd_builtin(cmd);
 	else if ((ft_strncmp(cmd[0], "pwd", 3)) == 0)
-		pwd();
+		pwd_builtin();
+//	else if (ft_strcmp(cmd[0], "exit") == 0)
+//		exit_builtin(data, cmd);
+//	else if (ft_strcmp(cmd[0], "echo") == 0)
+//		echo_builtin(cmd);
+//	else if (ft_strcmp(cmd[0], "env") == 0)
+//		env_builtin(data, cmd);
+//	else if (ft_strcmp(cmd[0], "export") == 0)
+//		export_builtin(data, cmd);
+//	else if (ft_strcmp(cmd[0], "unset") == 0)
+//		unset_builtin(data, cmd);
+	else
+		ft_set_path_and_execve(data, cmd);
 }
