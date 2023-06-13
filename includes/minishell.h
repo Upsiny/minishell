@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/06/08 16:30:44 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/13 15:14:53 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ void	exec_builtins(t_data *data, char **cmd);
 int		ft_nb_slash(char *str);
 void	pwd_builtin(void);
 void	cd_builtin(char **cmd);
+void	echo_builtin(char **cmd);
 void	cd_go_arg(char *arg);
 
 //////////// EXECUTION /////////////
