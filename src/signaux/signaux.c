@@ -33,6 +33,8 @@ void	ft_ctrl_c(int sig)
 void	ft_ctrl_back(int sig)
 {
 	(void)sig;
+	rl_replace_line("", 0);
+	rl_on_new_line();
 	rl_redisplay();
 }
 

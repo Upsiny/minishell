@@ -22,9 +22,9 @@ int	main(int ac, char **av, char **envp)
 		ft_error_msg("no arguments accepted");
 	if (!data)
 		ft_error_msg("Malloc Error");
+	ft_signaux();
 	while (1)
 	{
-		ft_signaux();
 		data->pid = -1;
 		data->prompt = readline("minishell de mort (҂◡_◡) > ");
 		add_history(data->prompt);
