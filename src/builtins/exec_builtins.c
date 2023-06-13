@@ -97,14 +97,13 @@ void	verif_cmd_struct(char **cmd)
 		i++;
 	}
 }
-/*
+
 void	exec_builtins(t_data *data, char **cmd)
 {
-	int	i;
+	(void)data;
 
-	i = 0;
 	verif_cmd_struct(cmd);
-	if (cmd->cmd[0] == NULL)
+	if (cmd[0] == NULL)
 			return ;
 	if ((ft_strncmp(cmd[0], "cd", 2)) == 0)
 		cd_builtin(cmd);
@@ -120,6 +119,6 @@ void	exec_builtins(t_data *data, char **cmd)
 //		export_builtin(data, cmd);
 //	else if (ft_strcmp(cmd[0], "unset") == 0)
 //		unset_builtin(data, cmd);
-	else
-		ft_set_path_and_execve(data, cmd);
-}*/
+//	else
+//		ft_set_path_and_execve(data, cmd);
+}

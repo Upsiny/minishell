@@ -88,8 +88,8 @@ void	error_lexer(t_data *data, char *msg);
 
 void	exec_builtins(t_data *data, char **cmd);
 int		ft_nb_slash(char *str);
-void	pwd(void);
-void	cd(char **cmd);
+void	pwd_builtin(void);
+void	cd_builtin(char **cmd);
 void	cd_go_arg(char *arg);
 
 //////////// EXECUTION /////////////
