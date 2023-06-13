@@ -17,8 +17,8 @@ void	implement_list(t_data *data, int type, int index, int start)
 	t_list	*new;
 	int		i;
 
-	//if (!data->s_lex)
-	//	data->s_lex = ft_calloc(sizeof(t_list), 1);
+//	if (!data->s_lex)
+//		data->s_lex = ft_calloc(sizeof(t_list), 1);
 	new = (t_list *)malloc(sizeof(t_list) * 1);
 	if (!new)
 		return ;
@@ -35,7 +35,6 @@ void	implement_list(t_data *data, int type, int index, int start)
 	new->token_type = type;
 	new->index = data->index_lexer;
 	ft_lstadd_back(&data->s_lex, new);
-	//print_list(data->s_lex);
 	new->next = (NULL);
 }
 
@@ -79,7 +78,6 @@ int	lexer_work(t_data *data)
 void	init_lexer(t_data *data)
 {
 	data->s_lex = NULL;
-	//data->s_lex = ft_calloc(sizeof(t_list), 1);
 	data->index_lexer = 0;
 	data->lexer_check = 0;
 	data->lexer_char = data->prompt[data->lexer_check];
