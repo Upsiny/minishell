@@ -97,7 +97,7 @@ void	verif_cmd_struct(char **cmd)
 		i++;
 	}
 }
-
+/*
 void	exec_builtins(t_data *data, char **cmd)
 {
 	int	i;
@@ -122,4 +122,4 @@ void	exec_builtins(t_data *data, char **cmd)
 //		unset_builtin(data, cmd);
 	else
 		ft_set_path_and_execve(data, cmd);
-}
+}*/

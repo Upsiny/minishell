@@ -11,8 +11,8 @@
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
-
+/*
 void	ft_set_path_and_execve(t_data *data, char **cmd)
 {
 	
-}
+}*/
