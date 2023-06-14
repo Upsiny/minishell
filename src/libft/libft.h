@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 16:14:17 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/04/27 16:02:53 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/14 17:04:59 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_strchr(const char *s, int c);
 size_t	ft_strlen(const char *s);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strrchr(const char *s, int c);
-int		ft_tolower(int c);
+char	*ft_tolower(char *c);
 int		ft_toupper(int c);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
