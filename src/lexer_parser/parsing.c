@@ -19,8 +19,6 @@ int	ft_parse_redir(t_data *data, int index)
 	if (index == last)
 		return (ft_error_parsing("syntax error near unexpected token `newline'"
 					, data));
-	//else if (index == 1 && tmp->next)
-	//	return (1);
 	return (0);
 }
 
