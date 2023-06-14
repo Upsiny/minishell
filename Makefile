@@ -27,6 +27,7 @@ SRCS    	=	src/main.c							\
 				src/lexer_parser/redir.c			\
 				src/lexer_parser/lexer_pipe.c		\
 				src/lexer_parser/parsing.c			\
+				src/lexer_parser/free_lexer.c		\
 				src/utils/free.c					\
 
 OBJS    	=	${SRCS:.c=.o}

@@ -45,7 +45,7 @@ int	main(int ac, char **av, char **envp)
 				//free_ptr(data->s_lex);
 			//}
 		}
-		free_ptr(data->s_lex);
+		ft_free_lst(data);
 		free(data->prompt);
 	}
 //	free_minishell(data);
