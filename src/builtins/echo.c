@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:10:50 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/06/13 15:30:19 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/13 16:27:01 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,5 @@ void	echo_builtin(char **cmd)
 				printf("%s\n", cmd[i]);
 		i++;
 	}
+	return ;
 }
