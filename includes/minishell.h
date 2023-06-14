@@ -73,6 +73,7 @@ int		ft_lexer_pipe(t_data *data);
 void	implement_list(t_data *data, int type, int index, int start);
 //char	*verif_pipes(char *prompt);
 int		ft_check_lst(t_data *data);
+void	ft_free_lst(t_data *data);
 
 //////////// Signaux ////////////////
 
