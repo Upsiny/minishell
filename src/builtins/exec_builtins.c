@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 11:43:29 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/06/14 17:05:40 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/15 14:27:51 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void	verif_cmd_struct(char **cmd)
 }
 
 // envoie une commande soit dans builtins, soit dans execve
-void	exec_builtins(t_data *data, char **cmd)
+void	redir_builtins_or_execve(t_data *data, char **cmd)
 {
 	(void)data;
 
