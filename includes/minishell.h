@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/06/13 15:14:53 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/15 14:28:21 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	error_lexer(t_data *data, char *msg);
 
 //////////// BUILTINS //////////////
 
-void	exec_builtins(t_data *data, char **cmd);
+void	redir_builtins_or_execve(t_data *data, char **cmd);
 int		ft_nb_slash(char *str);
 void	pwd_builtin(void);
 void	cd_builtin(char **cmd);

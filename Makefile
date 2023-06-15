@@ -6,7 +6,7 @@
 #    By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/31 11:43:52 by hguillau          #+#    #+#              #
-#    Updated: 2023/06/14 17:08:29 by tpaufert         ###   ########.fr        #
+#    Updated: 2023/06/15 14:40:46 by tpaufert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ CC      	=	gcc
 
 RM      	=	rm -f
 
-CFLAGS  	=	-Wall -Wextra -Werror #-g -fsanitize=address
+CFLAGS  	=	-Wall -Wextra -Werror -g -fsanitize=address
 
 all:		${NAME}
 
