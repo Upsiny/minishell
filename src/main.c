@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 10:23:44 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/06/15 15:07:35 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/15 16:21:57 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ int	main(int ac, char **av, char **envp)
 			ft_check_lst(data); // a supprimer quand la condition ci dessous est complete
 			//if (!ft_check_lst(data)) // securiter a valider quqnd les free seront fait !
 			//{
-	//			
-				redir_builtins_or_execve(data, data->st_cmd->cmd); // mettre tout la fin dans ces quotes
+	//			exec_builtins(data, data->st_cmd->cmd); // mettre tout la fin dans ces quotes
+	//			redir_builtins_or_execve(data, data->st_cmd->cmd); // mettre tout la fin dans ces quotes
 				//free_ptr(data->s_lex);
 			//}
 		}
