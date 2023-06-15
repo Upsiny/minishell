@@ -51,8 +51,8 @@ int	ft_lexer_alpha(t_data *data)
 			else
 			{
 				k = quote_in_str(data, c);
-				i += k;
-				while (k)
+				i += k - 1;
+				while (k - 1)
 				{
 					lexer_advance(data);
 					k--;
