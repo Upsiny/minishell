@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 11:43:29 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/06/15 14:27:51 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/15 15:22:29 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	verif_and_modif_cmd_if_slash_or_quote(char **cmd)
 	free(tmp);
 }
 
-void	verif_cmd_struct(char **cmd)
+char	**verif_cmd_struct(char **cmd)
 {
 	int	i;
 
@@ -96,6 +96,7 @@ void	verif_cmd_struct(char **cmd)
 		verif_and_modif_cmd_if_slash_or_quote(&cmd[i]);
 		i++;
 	}
+	return (cmd);
 }
 
 // envoie une commande soit dans builtins, soit dans execve
