@@ -12,30 +12,13 @@
 
 #include "libft.h"
 
-int	advance_quote(char const *str, char c, int index)
-{
-	int	i;
-
-	i = 0;
-	while (str[index + i] != c)
-		i++;
-	return (i);
-}
-
 static int	ft_diviser(char const *s, char c)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	j = 0;
 	while (*s)
 	{
-		if (*s == '\'' || *s == '\"')
-		{
-			j = *s;
-			i = i + advance_quote(s, j, i);
-		}
 		while (*s && *s == c)
 			s++;
 		if (*s && *s != c)
