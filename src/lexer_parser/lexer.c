@@ -52,12 +52,12 @@ int	lexer_work(t_data *data)
 {
 	while (data->lexer_check < (int)ft_strlen(data->prompt))
 	{
-		if (data->lexer_char == '\"' || data->lexer_char == '\'')
-		{
-			if (ft_lexer_quotes(data))
-				return (1);
-		}
-		else if (data->lexer_char == '<' || data->lexer_char == '>')
+//		if (data->lexer_char == '\"' || data->lexer_char == '\'')
+//		{
+//			if (ft_lexer_quotes(data))
+//				return (1);
+//		}
+		if (data->lexer_char == '<' || data->lexer_char == '>')
 		{
 			if (ft_lexer_redir(data))
 				return (1);

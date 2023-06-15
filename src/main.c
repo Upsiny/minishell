@@ -37,8 +37,8 @@ int	main(int ac, char **av, char **envp)
 	//	data->st_cmd->cmd = ft_split(data->prompt, ' '); //A supprimer, juste pour test builtins
 		if (!lexer_work(data))// Dans token type strings: supprimer les quotes (si circuit fermer)
 		{
-		//	print_list(data); // erreur dans s_lex, le premier maillon a un content vide
-			ft_check_lst(data); // a supprimer quand la condition ci dessous est complete
+			print_list(data); // erreur dans s_lex, le premier maillon a un content vide
+		//	ft_check_lst(data); // a supprimer quand la condition ci dessous est complete
 			//if (!ft_check_lst(data)) // securiter a valider quqnd les free seront fait !
 			//{
 	//			exec_builtins(data, data->st_cmd->cmd); // mettre tout la fin dans ces quotes
