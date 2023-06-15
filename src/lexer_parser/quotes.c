@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:15:45 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/06/06 17:36:44 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/15 16:43:10 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_check_endquote(t_data *data, char c)
 	}
 	return (0);
 }
-
+/*
 int	ft_simple_quotes(t_data *data)
 {
 	int	i;
@@ -90,3 +90,4 @@ int	ft_lexer_quotes(t_data *data)
 	data->index_lexer++;
 	return (0);
 }
+*/

@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/06/15 15:23:56 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/15 16:56:25 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ enum
 {
 	TOKEN_PIPE,
 	TOKEN_STRING,
-	TOKEN_SQUOTE,
-	TOKEN_DQUOTE,
 	TOKEN_REDIR,
 }	e_type;
 
@@ -57,6 +55,7 @@ typedef struct s_data
 	int		lexer_check;
 	char	lexer_char;
 	int		index_lexer;
+	int		in_pipe;
 }	t_data;
 
 //////////// Lexer_Parser //////////////////

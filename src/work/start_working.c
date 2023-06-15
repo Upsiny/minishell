@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 15:09:10 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/06/15 16:28:13 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/15 16:58:55 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_str(char *content, t_data *data)
 
 	cmd = ft_split(content, ' ');
 	cmd = verif_cmd_struct(cmd);
-	//redir_builtins_or_execve(data, cmd);
+	redir_builtins_or_execve(data, cmd);
 }
 
 int	start_work(t_data *data)
@@ -32,6 +32,7 @@ int	start_work(t_data *data)
 	{
 		if (tmp->token_type == TOKEN_PIPE)
 		{
+			data->in_pipe = 1;
 			if (ft_piping(data))
 				return 1;
 			tmp2 = tmp;
@@ -47,5 +48,17 @@ int	start_work(t_data *data)
 				}
 			}
 		}
+		if (tmp->next == NULL && data->in_pipe == 0)
+			tmp = data->s_lex;
 	}
+	while (tmp->next)
+	{
+		if (tmp->token_type == TOKEN_STRING)
+		{
+			if (ft_str(tmp->content, data))
+				return (1);
+			break;
+		}
+	}
+	return (0);
 }
