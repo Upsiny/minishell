@@ -12,8 +12,6 @@
 
 #include "../../includes/minishell.h"
 
-// mettre dans le makefile et dans le .h
-
 int	ft_check_endquote(t_data *data, char c)
 {
 	int	i;

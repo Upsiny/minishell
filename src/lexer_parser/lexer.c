@@ -70,7 +70,10 @@ int	lexer_work(t_data *data)
 		else if (!ft_isspace(data->lexer_char))
 			lexer_advance(data);
 		else
-			ft_lexer_alpha(data);
+		{
+			if (ft_lexer_alpha(data))
+				return (1);
+		}
 	}
 	return (0);
 }
