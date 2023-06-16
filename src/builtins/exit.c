@@ -11,12 +11,12 @@
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
-
+/*
 void	verif_arg_exit(t_data *data, int i, char **cmd)
 {
 	
 }
-
+*/
 void	exit_builtin(t_data *data, char **cmd)
 {
 	int	j;
@@ -30,7 +30,7 @@ void	exit_builtin(t_data *data, char **cmd)
 				printf("exit\n");
 			exit(0);
 		}
-		else
-			verif_arg_exit(data, 1, cmd);
+		/*else
+			verif_arg_exit(data, 1, cmd);*/
 	}
 }

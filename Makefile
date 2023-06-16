@@ -18,6 +18,7 @@ SRCS    	=	src/main.c							\
 				src/builtins/exec_builtins.c		\
 				src/builtins/exec_builtins_utils.c	\
 				src/builtins/echo.c					\
+				src/builtins/exit.c					\
 				src/execution/set_for_exec.c		\
 				src/execution/exec.c				\
 				src/lexer_parser/init.c				\

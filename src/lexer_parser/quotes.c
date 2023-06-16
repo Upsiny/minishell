@@ -57,7 +57,7 @@ int	ft_simple_quotes(t_data *data)
 	if (ft_check_endquote(data, '\'') != 0)
 	{
 		i = ft_check_endquote(data, '\'');
-		implement_list(data, TOKEN_SQUOTE, i, data->lexer_check);
+		implement_list(data, TOKEN_SQUOTE, i - 1, data->lexer_check + 1);
 		while (i)
 		{
 			lexer_advance(data);
@@ -80,7 +80,7 @@ int	ft_double_quotes(t_data *data)
 	if (ft_check_endquote(data, '\"') != 0)
 	{
 		i = ft_check_endquote(data, '\"');
-		implement_list(data, TOKEN_DQUOTE, i, data->lexer_check);
+		implement_list(data, TOKEN_DQUOTE, i - 1, data->lexer_check + 1);
 		while (i)
 		{
 			lexer_advance(data);
