@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
-
+/*
 int		quote_in_str(t_data *data, char c)
 {
 	int	i;
@@ -25,40 +25,20 @@ int		quote_in_str(t_data *data, char c)
 	else
 		return (0);
 }
-
+*/
 int	ft_lexer_alpha(t_data *data)
 {
 	int		i;
 	int		j;
-	int		k;
-	char	c;
 
 	i = 0;
 	j = data->lexer_check;
 	while (data->prompt[j + i])
 	{
 		if (data->lexer_char == '|' || data->lexer_char == '<'
-			|| data->lexer_char == '>')/* || !ft_isspace(data->lexer_char))*/
+			|| data->lexer_char == '>' || !ft_isspace(data->lexer_char)
+			|| data->lexer_char == '\'' || data->lexer_char == '\"')
 			break ;
-		if (data->lexer_char == '\'' || data->lexer_char == '\"')
-		{
-			c = data->lexer_char;
-			if (!quote_in_str(data, c))
-			{
-				error_lexer(data, "no ended quote");
-				return (1);
-			}
-			else
-			{
-				k = quote_in_str(data, c);
-				i += k;
-				while (k)
-				{
-					lexer_advance(data);
-					k--;
-				}
-			}
-		}
 		i++;
 		lexer_advance(data);
 	}
