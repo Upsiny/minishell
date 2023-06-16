@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/06/16 15:57:09 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/16 17:56:15 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ typedef struct s_data
 	char	lexer_char;
 	int		index_lexer;
 	int		in_pipe;
+	int		nb_cmds;
+	int		ret_err;
 }	t_data;
 
 //////////// Lexer_Parser //////////////////

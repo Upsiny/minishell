@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 16:11:27 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/06/15 16:57:01 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/16 17:56:26 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,6 @@ t_data	*init_struct(char **envp)
 		data->cp_env = ft_tabcpy(envp);
 	data->pid = -1;
 	data->in_pipe = 0;
+	data->ret_err = 0;
 	return (data);
 }
