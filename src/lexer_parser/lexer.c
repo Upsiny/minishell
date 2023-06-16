@@ -52,11 +52,11 @@ int	lexer_work(t_data *data)
 {
 	while (data->lexer_check < (int)ft_strlen(data->prompt))
 	{
-//		if (data->lexer_char == '\"' || data->lexer_char == '\'')
-//		{
-//			if (ft_lexer_quotes(data))
-//				return (1);
-//		}
+		if (data->lexer_char == '\"' || data->lexer_char == '\'')
+		{
+			if (ft_lexer_quotes(data))
+				return (1);
+		}
 		if (data->lexer_char == '<' || data->lexer_char == '>')
 		{
 			if (ft_lexer_redir(data))
@@ -69,7 +69,7 @@ int	lexer_work(t_data *data)
 		}
 		else if (!ft_isspace(data->lexer_char))
 			lexer_advance(data);
-		else
+		else if (data->lexer_char)
 		{
 			if (ft_lexer_alpha(data))
 				return (1);
