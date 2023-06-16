@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/06/16 17:56:15 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/16 18:41:09 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ typedef struct s_data
 	int		index_lexer;
 	int		in_pipe;
 	int		nb_cmds;
-	int		ret_err;
+	int		ret_err; //rends cette variable en globale ! merci helian on est oblige
 }	t_data;
 
 //////////// Lexer_Parser //////////////////
