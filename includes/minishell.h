@@ -22,6 +22,7 @@
 # include <signal.h>
 # include <sys/wait.h>
 # include <fcntl.h>
+# include <stdbool.h>
 
 enum
 {
@@ -67,7 +68,7 @@ void	init_lexer(t_data *data);
 int		lexer_work(t_data *data);
 int		ft_lexer_alpha(t_data *data);
 int		ft_lexer_quotes(t_data *data);
-int		ft_check_endquote(t_data *data, char c);
+int		ft_check_endquote(t_data *data, char c, int i, int j);
 int		ft_lexer_redir(t_data *data);
 int		ft_lexer_pipe(t_data *data);
 void	implement_list(t_data *data, int type, int index, int start);

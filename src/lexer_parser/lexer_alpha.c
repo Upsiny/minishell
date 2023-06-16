@@ -17,9 +17,9 @@ int		quote_in_str(t_data *data, char c)
 	int	i;
 
 	i = 0;
-	if (ft_check_endquote(data, c) != 0)
+	if (ft_check_endquote(data, c, 0, data->lexer_check) != 0)
 	{
-		i = ft_check_endquote(data, c);
+		i = ft_check_endquote(data, c, 0, data->lexer_check);
 		return (i);
 	}
 	else
@@ -51,8 +51,8 @@ int	ft_lexer_alpha(t_data *data)
 			else
 			{
 				k = quote_in_str(data, c);
-				i += k - 1;
-				while (k - 1)
+				i += k;
+				while (k)
 				{
 					lexer_advance(data);
 					k--;

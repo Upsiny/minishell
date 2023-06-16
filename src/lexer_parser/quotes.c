@@ -12,13 +12,8 @@
 
 #include "../../includes/minishell.h"
 
-int	ft_check_endquote(t_data *data, char c)
+int	ft_check_endquote(t_data *data, char c, int i, int j)
 {
-	int	i;
-	int	j;
-
-	i = 1;
-	j = data->lexer_check;
 	while (data->prompt[j])
 	{
 		i++;
@@ -28,7 +23,27 @@ int	ft_check_endquote(t_data *data, char c)
 	}
 	return (0);
 }
+
 /*
+int	ft_check_endquote(t_data *data, char c, int	i, int j)
+{
+	data->sfqi = i;
+	data->sfq = j;
+	while (data->prompt[data->sfq])
+	{
+		data->sfqi++;
+		data->sfq++;
+		if ((data->prompt[data->sfq] == '\'' && data->prompt[data->sfq] != c)
+			|| (data->prompt[data->sfq] == '\"'
+			&& data->prompt[data->sfq] != c))
+			ft_check_endquote(data, data->prompt[data->sfq],
+			data->sfqi, data->sfq);
+		if (data->prompt[data->sfq] == c)
+			return (data->sfqi);
+	}
+	return (0);
+}
+
 int	ft_simple_quotes(t_data *data)
 {
 	int	i;
