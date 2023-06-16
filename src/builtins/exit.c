@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 15:37:02 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/06/16 18:48:13 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/16 18:55:44 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,7 @@ void	exit_not_numeric(int i, char **cmd)
 {
 	write(2, "exit\nminishell: exit: ", 22);
 	write(2, cmd[i], ft_strlen(cmd[i]));
-	write(2, ": ", 2);
-	write(2, "numeric argument required", 25);
-	write(2, "\n", 1);
+	write(2, ": numeric argument required\n", 25);
 	exit(255);
 }
 
@@ -54,7 +52,7 @@ void	verif_arg_exit(t_data *data, int i, char **cmd)
 			data->ret_err = 1;
 		}
 	}
-	else if (strdigit(cmd[i]) == 1)
+	else if (ft_str_is_digit(cmd[i]) == 0)
 		exit_not_numeric(i, cmd);
 }
 
