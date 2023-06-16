@@ -16,12 +16,9 @@ SRCS    	=	src/main.c							\
 				src/builtins/pwd.c					\
 				src/builtins/cd.c					\
 				src/builtins/echo.c					\
-<<<<<<< HEAD
 				src/builtins/exit.c					\
-=======
 				src/execution/redir_exec_builtins.c	\
 				src/execution/utils.c				\
->>>>>>> fad291485da4752dfaaa16eefacdd5291aa4c2a9
 				src/execution/set_for_exec.c		\
 				src/execution/exec.c				\
 				src/lexer_parser/init.c				\
@@ -34,6 +31,7 @@ SRCS    	=	src/main.c							\
 				src/lexer_parser/parsing.c			\
 				src/lexer_parser/free_lexer.c		\
 				src/utils/free.c					\
+				src/utils/ft_count_list.c			\
 
 OBJS    	=	${SRCS:.c=.o}
 
