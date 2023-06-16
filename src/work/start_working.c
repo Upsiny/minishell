@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 15:09:10 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/06/15 16:58:55 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/16 17:45:40 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,14 @@ int	start_work(t_data *data)
 		}
 	}
 	return (0);
+}
+
+int	pre_start_work(t_data *data)
+{
+	int	ret;
+
+	ret = 0;
+	data->nb_cmds = ft_count_list(data->s_lex);
+	ret = start_work(data);
+	return (ret);
 }
