@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/06/16 15:25:52 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/16 15:57:09 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,9 @@ void	error_lexer(t_data *data, char *msg);
 int		ft_nb_slash(char *str);
 void	pwd_builtin(void);
 void	cd_builtin(char **cmd);
-void	echo_builtin(char **cmd);
 void	cd_go_arg(char *arg);
+void	echo_builtin(char **cmd);
+void	exit_builtin(t_data *data, char **cmd);
 
 //////////// EXECUTION /////////////
 
@@ -107,5 +108,6 @@ void	redir_builtins_or_execve(t_data *data, char **cmd);
 void	*free_ptr(void *ptr);
 void	print_list(t_data *data);
 int		ft_isspace(char c);
+int 	ft_count_list(t_list *head);
 
 #endif
