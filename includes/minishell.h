@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/06/16 18:41:09 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/19 13:05:52 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ typedef struct s_data
 	int		lexer_check;
 	char	lexer_char;
 	int		index_lexer;
-	int		in_pipe;
+	bool	in_pipe;
 	int		nb_cmds;
-	int		ret_err; //rends cette variable en globale ! merci helian on est oblige
+	int		ret_err; //rends cette variable en globale ! merci helian on est oblige. CEST BEN QUI LE DIT
 }	t_data;
 
 //////////// Lexer_Parser //////////////////

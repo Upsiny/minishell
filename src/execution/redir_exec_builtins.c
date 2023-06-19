@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 11:43:29 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/06/16 18:04:37 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/19 15:40:59 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,8 +111,8 @@ void	redir_builtins_or_execve(t_data *data, char **cmd)
 		cd_builtin(cmd);
 	else if ((ft_strncmp(ft_tolower(cmd[0]), "pwd", 3)) == 0)
 		pwd_builtin();
-//	else if (ft_strncmp(cmd[0], "exit", 4) == 0)
-//		exit_builtin(data, cmd);
+	else if (ft_strncmp(cmd[0], "exit", 4) == 0)
+		exit_builtin(data, cmd);
 	else if (ft_strncmp(ft_tolower(cmd[0]), "echo", 4) == 0)
 		echo_builtin(cmd);
 //	else if (ft_strncmp(ft_tolower(cmd[0]), "env", 3) == 0)
