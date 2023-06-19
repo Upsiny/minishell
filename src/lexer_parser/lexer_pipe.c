@@ -19,7 +19,7 @@ int	ft_lexer_pipe(t_data *data)
 	j = data->lexer_check;
 	if (data->prompt[j + 1] == data->lexer_char)
 	{
-		error_lexer(data, "syntax error near unexpected token `||'");
+		error_lexer("syntax error near unexpected token `||'");
 		return (1);
 	}
 	else

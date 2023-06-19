@@ -18,19 +18,23 @@ int	ft_parse_pipe(t_data *data, int index)
 
 	last = ft_lstsize(data->s_lex) - 1;
 	if (index == 0 || index == last)
-		return (ft_error_parsing("syntax error near unexpected token `|'"
-					, data));
+		return (ft_error_parsing("syntax error near unexpected token `|'"));
 	return (0);
 }
 
-int	ft_parse_redir(t_data *data, int index)
+int	ft_parse_redir(t_data *data, int index, t_list *tmp)
 {
 	int	last;
 
 	last = ft_lstsize(data->s_lex) - 1;
 	if (index == last)
 		return (ft_error_parsing("syntax error near unexpected token `newline'"
-					, data));
+				));
+	else if (tmp->next->token_type == TOKEN_REDIR)
+	{
+		printf("syntax error near unexpected token `%s'", tmp->next->content);
+		return (ft_error_parsing(""));
+	}
 	return (0);
 }
 
@@ -48,7 +52,7 @@ int	ft_check_lst(t_data *data)
 		}
 		if (tmp->token_type == TOKEN_REDIR)
 		{
-			if (ft_parse_redir(data, tmp->index))
+			if (ft_parse_redir(data, tmp->index, tmp))
 				return (1);
 		}
 		tmp = tmp->next;

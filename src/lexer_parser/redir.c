@@ -45,7 +45,7 @@ int	ft_lexer_redir(t_data *data)
 		i = count_redir(data, data->lexer_char);
 	else
 	{
-		error_lexer(data, "syntax error near unexpected token `>'");
+		error_lexer("syntax error near unexpected token `>'");
 		return (1);
 	}
 	implement_list(data, TOKEN_REDIR, i, j);

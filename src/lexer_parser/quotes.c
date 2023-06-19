@@ -67,7 +67,7 @@ int	ft_simple_quotes(t_data *data)
 	}
 	else
 	{
-		error_lexer(data, "no ended quote");
+		error_lexer("no ended quote");
 		return (1);
 	}
 }
@@ -90,7 +90,7 @@ int	ft_double_quotes(t_data *data)
 	}
 	else
 	{
-		error_lexer(data, "no ended quote");
+		error_lexer("no ended quote");
 		return (1);
 	}
 }

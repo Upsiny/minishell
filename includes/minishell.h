@@ -90,8 +90,8 @@ void	ft_signaux(void);
 //////////// Erreurs ///////////////
 
 void	ft_error_msg(char *msg);
-int		ft_error_parsing(char *msg, t_data *data);
-void	error_lexer(t_data *data, char *msg);
+int		ft_error_parsing(char *msg);
+void	error_lexer(char *msg);
 
 //////////// BUILTINS //////////////
 

@@ -14,9 +14,9 @@
 
 //ne pas oublier de recuperer dans le bash les numeros derreur pour que les erreurs de minishell coincident au bash;
 
-void	error_lexer(t_data *data, char *msg)
+void	error_lexer(char *msg)
 {
-	(void)data;
+	//(void)data;
 	printf("%s\n", msg);
 //	data->prompt = "";
 //	data->index_lexer = 0;
@@ -25,10 +25,11 @@ void	error_lexer(t_data *data, char *msg)
 //	free(data->s_lex);
 }
 
-int	ft_error_parsing(char *msg, t_data *data)
+int	ft_error_parsing(char *msg)
 {
+	//(void)data;
 	printf("%s\n", msg);
-	free_ptr(data->s_lex);
+//	free_ptr(data->s_lex);
 	return (1);
 }
 
