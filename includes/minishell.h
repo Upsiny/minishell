@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/06/19 13:05:52 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/20 16:02:42 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,9 @@ typedef struct s_data
 	int		index_lexer;
 	bool	in_pipe;
 	int		nb_cmds;
+	char	*val_home;
+	char	*pwd;
+	char	*old_pwd;
 	int		ret_err; //rends cette variable en globale ! merci helian on est oblige. CEST BEN QUI LE DIT
 }	t_data;
 
@@ -97,7 +100,10 @@ void	error_lexer(char *msg);
 
 int		ft_nb_slash(char *str);
 void	pwd_builtin(void);
-void	cd_builtin(char **cmd);
+char	*get_home_value(char	**cp_env);
+void	get_pwd(t_data *data);
+void	cd_builtin(t_data *data, char **cmd);
+void	cd_go_home(t_data *data);
 void	cd_go_arg(char *arg);
 void	echo_builtin(char **cmd);
 void	exit_builtin(t_data *data, char **cmd);

@@ -6,7 +6,7 @@
 #    By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/31 11:43:52 by hguillau          #+#    #+#              #
-#    Updated: 2023/06/16 18:01:58 by tpaufert         ###   ########.fr        #
+#    Updated: 2023/06/20 15:20:08 by tpaufert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ SRCS    	=	src/main.c							\
 				src/errors/error.c					\
 				src/builtins/pwd.c					\
 				src/builtins/cd.c					\
+				src/builtins/cd_utils.c				\
 				src/builtins/echo.c					\
 				src/builtins/exit.c					\
 				src/execution/redir_exec_builtins.c	\
