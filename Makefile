@@ -6,7 +6,7 @@
 #    By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/31 11:43:52 by hguillau          #+#    #+#              #
-#    Updated: 2023/06/20 15:20:08 by tpaufert         ###   ########.fr        #
+#    Updated: 2023/06/21 12:15:19 by tpaufert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRCS    	=	src/main.c							\
 				src/builtins/cd_utils.c				\
 				src/builtins/echo.c					\
 				src/builtins/exit.c					\
+				src/builtins/env.c					\
 				src/execution/redir_exec_builtins.c	\
 				src/execution/utils.c				\
 				src/execution/set_for_exec.c		\
@@ -33,6 +34,7 @@ SRCS    	=	src/main.c							\
 				src/lexer_parser/free_lexer.c		\
 				src/utils/free.c					\
 				src/utils/ft_count_list.c			\
+				src/utils/tab_len.c					\
 
 OBJS    	=	${SRCS:.c=.o}
 

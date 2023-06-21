@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/06/20 16:02:42 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/21 12:14:42 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,7 @@ void	cd_go_home(t_data *data);
 void	cd_go_arg(char *arg);
 void	echo_builtin(char **cmd);
 void	exit_builtin(t_data *data, char **cmd);
+void	env_builtin(t_data *data, char **cmd);
 
 //////////// EXECUTION /////////////
 
@@ -120,5 +121,6 @@ void	*free_ptr(void *ptr);
 void	print_list(t_data *data);
 int		ft_isspace(char c);
 int 	ft_count_list(t_list *head);
+int		ft_tab_len(char **tab);
 
 #endif

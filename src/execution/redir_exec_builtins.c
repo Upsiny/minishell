@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 11:43:29 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/06/20 15:47:04 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/21 12:00:37 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,14 +107,14 @@ void	redir_builtins_or_execve(t_data *data, char **cmd)
 			return ;
 	if ((ft_strncmp(ft_tolower(cmd[0]), "cd", 2)) == 0)
 		cd_builtin(data, cmd);
-	else if ((ft_strncmp(ft_tolower(cmd[0]), "pwd", 3)) == 0)
+	else if ((ft_strncmp(ft_tolower(cmd[0]), "pwd", 3)) == 0)// a modifier en utilisant cp_env;
 		pwd_builtin();
 	else if (ft_strncmp(cmd[0], "exit", 4) == 0)
 		exit_builtin(data, cmd);
 	else if (ft_strncmp(ft_tolower(cmd[0]), "echo", 4) == 0)
 		echo_builtin(cmd);
-//	else if (ft_strncmp(ft_tolower(cmd[0]), "env", 3) == 0)
-//		env_builtin(data, cmd);
+	else if (ft_strncmp(ft_tolower(cmd[0]), "env", 3) == 0)
+		env_builtin(data, cmd);
 //	else if (ft_strncmp(ft_tolower(cmd[0]), "export", 6) == 0)
 //		export_builtin(data, cmd);
 //	else if (ft_strncmp(ft_tolower(cmd[0]), "unset", 5) == 0)
