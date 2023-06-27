@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/06/21 12:14:42 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/27 14:21:51 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ typedef struct s_data
 	pid_t	pid;
 	char	*prompt;
 	char	**cp_env;
+	char	**cp_exp;
 	t_list	*s_lex;
 	int		lexer_check;
 	char	lexer_char;
@@ -104,7 +105,7 @@ char	*get_home_value(char	**cp_env);
 void	get_pwd(t_data *data);
 void	cd_builtin(t_data *data, char **cmd);
 void	cd_go_home(t_data *data);
-void	cd_go_arg(char *arg);
+int		cd_go_arg(char *arg);
 void	echo_builtin(char **cmd);
 void	exit_builtin(t_data *data, char **cmd);
 void	env_builtin(t_data *data, char **cmd);

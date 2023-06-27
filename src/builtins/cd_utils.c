@@ -6,11 +6,53 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 15:18:20 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/06/20 16:09:22 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/27 14:18:44 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
+
+void	change_value_exp(t_data *data, char **cmd)
+{
+	if (cmd[1][0] == '/')
+		change_val(data->cp_exp, cmd[1], pwd, oldpwd);
+	else if ((ft_strncmp(cmd[1], ".", 1) == 0 || ft_strncmp(cmd[1], "./", 2)
+		== 0))
+		change_value_oldpwd(data->cp_exp, pwd, oldpwd);
+	else if ((ft_strncmp(cmd[1], "..", 2) == 0 || ft_strncmp(cmd[1],
+			"../", 3) == 0))
+	{
+		change_value_pwd(data->cp_exp);
+		change_value_oldpwd(data->cp_exp, pwd, oldpwd);
+	}
+	else if (ft_strncmp(cmd[1], "./", 2) > 0
+		|| ft_strncmp(cmd[1], "../", 3) > 0)
+	{
+		change_value_oldpwd(data->cp_exp, pwd, oldpwd);
+		change_val_pwdpath(data->cp_exp, cmd);
+	}
+}
+
+void	change_value_env(t_data *data, char **cmd)
+{
+	if (cmd[1][0] == '/')
+		change_val(data->cp_env, cmd[1], pwd, oldpwd);
+	else if ((ft_strncmp(cmd[1], ".", 1) == 0 || ft_strncmp(cmd[1], "./", 2)
+		== 0))
+		change_value_oldpwd(data->cp_env, pwd, oldpwd);
+	else if ((ft_strncmp(cmd[1], "..", 2) == 0 || ft_strncmp(cmd[1],
+			"../", 3) == 0))
+	{
+		change_value_pwd(data->cp_env);
+		change_value_oldpwd(data->cp_env, pwd, oldpwd);
+	}
+	else if (ft_strncmp(cmd[1], "./", 2) > 0
+		|| ft_strncmp(cmd[1], "../", 3) > 0)
+	{
+		change_value_oldpwd(data->cp_env, pwd, oldpwd);
+		change_val_pwdpath(data->cp_env, cmd);
+	}
+}
 
 void	get_pwd(t_data *data)
 {
