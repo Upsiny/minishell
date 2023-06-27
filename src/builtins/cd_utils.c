@@ -6,13 +6,13 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 15:18:20 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/06/27 14:18:44 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/27 14:33:40 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
 
-void	change_value_exp(t_data *data, char **cmd)
+/*void	change_value_exp(t_data *data, char **cmd)
 {
 	if (cmd[1][0] == '/')
 		change_val(data->cp_exp, cmd[1], pwd, oldpwd);
@@ -52,7 +52,7 @@ void	change_value_env(t_data *data, char **cmd)
 		change_value_oldpwd(data->cp_env, pwd, oldpwd);
 		change_val_pwdpath(data->cp_env, cmd);
 	}
-}
+}*/
 
 void	get_pwd(t_data *data)
 {

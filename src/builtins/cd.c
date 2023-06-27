@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:22:13 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/06/27 14:30:56 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/27 14:33:01 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	cd_builtin(t_data *data, char **cmd)
 	if (cmd[1] == NULL || (cmd[1][0] == '~'
 		&& cmd[1][1] == '\0'))
 		cd_go_home(data);
-	else if (cd_go_arg(cmd[1]) == 0);
+	else if (cd_go_arg(cmd[1]) == 0)
 		data->ret_err = 1;
 	//else   a faire quand jaurai fais export et initialise la variable export_copy;
 	//{
