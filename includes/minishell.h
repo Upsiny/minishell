@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/06/28 14:32:16 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/28 16:39:58 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ void	ft_signaux(void);
 void	ft_error_msg(char *msg);
 int		ft_error_parsing(char *msg);
 void	error_lexer(char *msg);
+void	ft_print_error_msg3(char *s1, char *s2, char *s3);
 
 //////////// BUILTINS //////////////
 
@@ -109,6 +110,7 @@ int		cd_go_arg(char *arg);
 void	echo_builtin(char **cmd);
 void	exit_builtin(t_data *data, char **cmd);
 void	env_builtin(t_data *data, char **cmd);
+void	unset_builtin(t_data *data, char **cmd);
 
 //////////// EXECUTION /////////////
 
@@ -120,9 +122,11 @@ void	redir_builtins_or_execve(t_data *data, char **cmd);
 //////////// UTILS /////////////////
 
 void	*free_ptr(void *ptr);
+void	free_tab(char **tab);
 void	print_list(t_data *data);
 int		ft_isspace(char c);
 int 	ft_count_list(t_list *head);
 int		ft_tab_len(char **tab);
+char	**ft_cpytab(char **tab);
 
 #endif

@@ -6,19 +6,21 @@
 #    By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/31 11:43:52 by hguillau          #+#    #+#              #
-#    Updated: 2023/06/28 14:32:00 by tpaufert         ###   ########.fr        #
+#    Updated: 2023/06/28 16:40:23 by tpaufert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS    	=	src/main.c							\
 				src/signaux/signaux.c				\
 				src/errors/error.c					\
+				src/errors/printf_error.c			\
 				src/builtins/pwd.c					\
 				src/builtins/cd.c					\
 				src/builtins/cd_utils.c				\
 				src/builtins/echo.c					\
 				src/builtins/exit.c					\
 				src/builtins/env.c					\
+				src/builtins/unset.c				\
 				src/execution/utils_exec.c			\
 				src/execution/redir_exec_builtins.c	\
 				src/execution/utils.c				\
@@ -36,6 +38,7 @@ SRCS    	=	src/main.c							\
 				src/utils/free.c					\
 				src/utils/ft_count_list.c			\
 				src/utils/tab_len.c					\
+				src/utils/ft_cpytab.c				\
 
 OBJS    	=	${SRCS:.c=.o}
 
