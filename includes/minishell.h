@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/06/27 14:21:51 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/28 14:32:16 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,7 @@ void	env_builtin(t_data *data, char **cmd);
 
 //////////// EXECUTION /////////////
 
+int		ft_strcmp(char *s1, char *s2);
 void	ft_set_path_and_execve(t_data *data, char **cmd);
 char	**verif_cmd_struct(char **cmd);
 void	redir_builtins_or_execve(t_data *data, char **cmd);

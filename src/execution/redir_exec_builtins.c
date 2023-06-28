@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 11:43:29 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/06/21 12:00:37 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/28 14:35:37 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,19 +105,19 @@ void	redir_builtins_or_execve(t_data *data, char **cmd)
 	verif_cmd_struct(cmd);
 	if (cmd[0] == NULL)
 			return ;
-	if ((ft_strncmp(ft_tolower(cmd[0]), "cd", 2)) == 0)
+	if (ft_strcmp(ft_tolower(cmd[0]), "cd") == 0)
 		cd_builtin(data, cmd);
-	else if ((ft_strncmp(ft_tolower(cmd[0]), "pwd", 3)) == 0)// a modifier en utilisant cp_env;
+	else if (ft_strcmp(ft_tolower(cmd[0]), "pwd") == 0)// a modifier en utilisant cp_env;
 		pwd_builtin();
-	else if (ft_strncmp(cmd[0], "exit", 4) == 0)
+	else if (ft_strcmp(cmd[0], "exit") == 0)
 		exit_builtin(data, cmd);
-	else if (ft_strncmp(ft_tolower(cmd[0]), "echo", 4) == 0)
+	else if (ft_strcmp(ft_tolower(cmd[0]), "echo") == 0)
 		echo_builtin(cmd);
-	else if (ft_strncmp(ft_tolower(cmd[0]), "env", 3) == 0)
+	else if (ft_strcmp(ft_tolower(cmd[0]), "env") == 0)
 		env_builtin(data, cmd);
-//	else if (ft_strncmp(ft_tolower(cmd[0]), "export", 6) == 0)
+//	else if (ft_strcmp(ft_tolower(cmd[0]), "export") == 0)
 //		export_builtin(data, cmd);
-//	else if (ft_strncmp(ft_tolower(cmd[0]), "unset", 5) == 0)
+//	else if (ft_strcmp(ft_tolower(cmd[0]), "unset") == 0)
 //		unset_builtin(data, cmd);
 //	else
 //		ft_set_path_and_execve(data, cmd);

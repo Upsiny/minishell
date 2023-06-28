@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:10:50 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/06/15 13:06:26 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/28 14:26:41 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,12 @@ void	echo_builtin(char **cmd)
 		}
 	if ((ft_strncmp((cmd[1]), "-n", 2)) == 0 && ft_strlen(cmd[1]) == 2)
 		check_option(cmd);
-	else
+	else if (ft_strlen(cmd[0]) == 4)
 		while (cmd[i] && cmd[i][0] != '\0' && (cmd[i][0] >= 32
 				&& cmd[i][0] <= 126))
 		{
-			if (cmd[i][0] == '$')
-			{
-				//found_dollar(cmd[i]);
-				i++;
-			}
+	//		if (cmd[i][0] == '$')
+	//			i++;
 			if (cmd[i + 1] != NULL)
 					printf("%s ", cmd[i]);
 			else
