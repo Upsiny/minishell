@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/06/28 16:39:58 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/29 15:50:12 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,7 @@ void	echo_builtin(char **cmd);
 void	exit_builtin(t_data *data, char **cmd);
 void	env_builtin(t_data *data, char **cmd);
 void	unset_builtin(t_data *data, char **cmd);
+char	**order_exp(char **cp_env);
 
 //////////// EXECUTION /////////////
 
