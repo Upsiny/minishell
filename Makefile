@@ -32,6 +32,7 @@ SRCS    	=	src/main.c							\
 				src/lexer_parser/free_lexer.c		\
 				src/utils/free.c					\
 				src/utils/ft_count_list.c			\
+				src/expender/expender.c				\
 
 OBJS    	=	${SRCS:.c=.o}
 
