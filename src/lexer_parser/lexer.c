@@ -80,6 +80,8 @@ int	lexer_work(t_data *data)
 
 void	init_lexer(t_data *data)
 {
+	data->in_pipe = 0;
+	data->index_cmd = 0;
 	data->s_lex = NULL;
 	data->index_lexer = 0;
 	data->lexer_check = 0;

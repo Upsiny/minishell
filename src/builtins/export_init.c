@@ -72,13 +72,13 @@ void	sort_exp(char **sorted_exp, int count)
 // Fonction principale pour ordonner les variables exportées
 char	**order_exp(char **cp_env)
 {
-	int		i;
+//	int		i;
 	//int		j;
 	int		count;
 	char	**sorted_exp;
 	//char	*temp;
 
-	i = 0;
+//	i = 0;
 	count = count_exp(cp_env);
 	sorted_exp = duplicate_exp(cp_env, count);
 	sort_exp(sorted_exp, count);

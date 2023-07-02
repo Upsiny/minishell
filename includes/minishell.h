@@ -33,11 +33,15 @@ enum
 	TOKEN_REDIR,
 }	e_type;
 
+struct s_data;
+
 typedef struct s_cmd
 {
-	char	**cmd; //2 string max (la commande et option eventuel)
-	char	**stdin;
-	char	**stdout;
+	char			**cmd;
+	char			**stdin;
+	char			**stdout;
+	struct s_cmd	*next;
+	struct s_data	*data;
 }	t_cmd;
 
 /*typedef struct s_lexer
@@ -62,7 +66,9 @@ typedef struct s_data
 	int		lexer_check;
 	char	lexer_char;
 	int		index_lexer;
-	bool	in_pipe;
+	int		index_cmd;
+	int		in_pipe;
+//	bool	in_pipe;
 	int		nb_cmds;
 	char	*val_home;
 	char	*pwd;
