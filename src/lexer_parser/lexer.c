@@ -6,7 +6,7 @@
 /*   By: tpaufert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 10:30:12 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/04/27 16:02:43 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/07/02 16:20:18 by hguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ int	lexer_work(t_data *data)
 			if (ft_lexer_quotes(data))
 				return (1);
 		}
+		else if (data->lexer_char == '$')
+			get_dollar(data);
 		if (data->lexer_char == '<' || data->lexer_char == '>')
 		{
 			if (ft_lexer_redir(data))

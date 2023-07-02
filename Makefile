@@ -6,7 +6,7 @@
 #    By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/31 11:43:52 by hguillau          #+#    #+#              #
-#    Updated: 2023/07/01 13:10:36 by hguillau         ###   ########.fr        #
+#    Updated: 2023/07/02 17:45:04 by hguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRCS    	=	src/main.c							\
 				src/lexer_parser/quotes.c			\
 				src/lexer_parser/redir.c			\
 				src/lexer_parser/lexer_pipe.c		\
+				src/lexer_parser/dollar.c			\
 				src/lexer_parser/parsing.c			\
 				src/lexer_parser/free_lexer.c		\
 				src/utils/free.c					\

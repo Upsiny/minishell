@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/06/29 15:50:12 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/07/02 18:21:25 by hguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 # include <sys/wait.h>
 # include <fcntl.h>
 # include <stdbool.h>
+
+#define DOLLAR_STOP "`~!@#$%^&*()-=+[]{}\\|:;,<>./?"
 
 enum
 {
@@ -88,6 +90,7 @@ int		ft_lexer_quotes(t_data *data);
 int		ft_check_endquote(t_data *data, char c);
 int		ft_lexer_redir(t_data *data);
 int		ft_lexer_pipe(t_data *data);
+void	get_dollar(t_data *data);
 void	implement_list(t_data *data, int type, int index, int start);
 //char	*verif_pipes(char *prompt);
 int		ft_check_lst(t_data *data);
@@ -108,7 +111,7 @@ void	ft_print_error_msg3(char *s1, char *s2, char *s3);
 
 int		ft_nb_slash(char *str);
 void	pwd_builtin(void);
-char	*get_home_value(char	**cp_env);
+char	*get_home_value(char **cp_env);
 void	get_pwd(t_data *data);
 void	cd_builtin(t_data *data, char **cmd);
 void	cd_go_home(t_data *data);
