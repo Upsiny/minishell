@@ -6,7 +6,7 @@
 #    By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/31 11:43:52 by hguillau          #+#    #+#              #
-#    Updated: 2023/06/29 15:39:43 by tpaufert         ###   ########.fr        #
+#    Updated: 2023/07/01 13:10:36 by hguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,11 +47,11 @@ NAME    	=	minishell
 
 LIBS		=	./src/libft/
 
-ifeq ($(USER), tpaufert)
+#ifeq ($(USER), tpaufert)
 RL			=	-L/Users/$(USER)/.brew/Cellar/readline/8.2.1/lib -lreadline
-else
-RL			=	-L/opt/homebrew/opt/readline/lib -lreadline
-endif
+#else
+#RL			=	-L/opt/homebrew/opt/readline/lib -lreadline
+#endif
 
 CC      	=	gcc
 
