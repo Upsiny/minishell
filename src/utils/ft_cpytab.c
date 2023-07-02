@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   ft_cpytab.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 15:41:13 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/06/28 15:31:19 by tpaufert         ###   ########.fr       */
+/*   Created: 2023/06/28 16:33:17 by tpaufert          #+#    #+#             */
+/*   Updated: 2023/06/28 16:40:45 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
 
-void	*free_ptr(void *ptr)
+char	**ft_cpytab(char **tab)
 {
-	if (ptr)
-		free(ptr);
-	return (NULL);
-}
+	int		size;
+	int		i;
+	char	**cpy;
 
-void	free_tab(char **tab)
-{
-	int	i;
-
+	size = 0;
 	i = 0;
-    if (tab == NULL)
-    	return ;
-    while (tab[i] != NULL)
+	while (tab[size] != NULL)
+		size++;
+	cpy = malloc(sizeof(char *) * (size + 1));
+	if (tab == NULL || !cpy)
+		return (NULL);
+	while (i < size)
 	{
-		free(tab[i]);
+		cpy[i] = ft_strdup3(tab[i]);
 		i++;
-    }
-    free(tab);
+	}
+	cpy[size] = NULL;
+	return (cpy);
 }

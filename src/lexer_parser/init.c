@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 16:11:27 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/06/16 17:56:26 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/29 15:50:34 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,29 @@ t_data	*init_struct(char **envp)
 	if (!data->st_cmd)
 		ft_error_msg("malloc error");
 	if (envp[0] == NULL)
-		printf("...");
+		printf("No envp. get only new pwd and the old.");
 	else
 		data->cp_env = ft_tabcpy(envp);
+	data->cp_exp = ft_cpytab(data->cp_env);
+	data->cp_exp = order_exp(data->cp_exp);
+	int i = 0;
+	while (data->cp_env[i])
+	{
+		printf("%s\n", data->cp_env[i]);
+		i ++;
+	}
+	printf("\n\n\n");
+	i = 0;
+	while (data->cp_exp[i])
+	{
+		printf("%s\n", data->cp_exp[i]);
+		i ++;
+	}
 	data->pid = -1;
 	data->in_pipe = 0;
 	data->ret_err = 0;
+	data->val_home = get_home_value(data->cp_env);
+	data->pwd = NULL;
+	data->old_pwd = NULL;
 	return (data);
 }

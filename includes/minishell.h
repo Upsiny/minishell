@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/06/16 18:41:09 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/06/29 15:50:12 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,19 @@ typedef struct s_data
 	pid_t	pid;
 	char	*prompt;
 	char	**cp_env;
+	char	**cp_exp;
 	t_list	*s_lex;
 	int		lexer_check;
 	char	lexer_char;
 	int		index_lexer;
 	int		index_cmd;
 	int		in_pipe;
+//	bool	in_pipe;
 	int		nb_cmds;
-	int		ret_err; //rends cette variable en globale ! merci helian on est oblige
+	char	*val_home;
+	char	*pwd;
+	char	*old_pwd;
+	int		ret_err; //rends cette variable en globale ! merci helian on est oblige. CEST BEN QUI LE DIT
 }	t_data;
 
 //////////// Lexer_Parser //////////////////
@@ -97,18 +102,26 @@ void	ft_signaux(void);
 void	ft_error_msg(char *msg);
 int		ft_error_parsing(char *msg);
 void	error_lexer(char *msg);
+void	ft_print_error_msg3(char *s1, char *s2, char *s3);
 
 //////////// BUILTINS //////////////
 
 int		ft_nb_slash(char *str);
 void	pwd_builtin(void);
-void	cd_builtin(char **cmd);
-void	cd_go_arg(char *arg);
+char	*get_home_value(char	**cp_env);
+void	get_pwd(t_data *data);
+void	cd_builtin(t_data *data, char **cmd);
+void	cd_go_home(t_data *data);
+int		cd_go_arg(char *arg);
 void	echo_builtin(char **cmd);
 void	exit_builtin(t_data *data, char **cmd);
+void	env_builtin(t_data *data, char **cmd);
+void	unset_builtin(t_data *data, char **cmd);
+char	**order_exp(char **cp_env);
 
 //////////// EXECUTION /////////////
 
+int		ft_strcmp(char *s1, char *s2);
 void	ft_set_path_and_execve(t_data *data, char **cmd);
 char	**verif_cmd_struct(char **cmd);
 void	redir_builtins_or_execve(t_data *data, char **cmd);
@@ -116,8 +129,11 @@ void	redir_builtins_or_execve(t_data *data, char **cmd);
 //////////// UTILS /////////////////
 
 void	*free_ptr(void *ptr);
+void	free_tab(char **tab);
 void	print_list(t_data *data);
 int		ft_isspace(char c);
 int 	ft_count_list(t_list *head);
+int		ft_tab_len(char **tab);
+char	**ft_cpytab(char **tab);
 
 #endif
