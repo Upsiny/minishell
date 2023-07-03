@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/07/02 18:21:25 by hguillau         ###   ########.fr       */
+/*   Updated: 2023/07/03 16:24:50 by hguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # include <fcntl.h>
 # include <stdbool.h>
 
-#define DOLLAR_STOP "`~!@#$%^&*()-=+[]{}\\|:;,<>./?"
+#define DOLLAR_STOP "`~!@#$%^&*()-=+[]{}\'\"\\|:;,<>./"
 
 enum
 {

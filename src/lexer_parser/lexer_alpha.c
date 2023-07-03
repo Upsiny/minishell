@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 14:17:23 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/07/02 17:32:03 by hguillau         ###   ########.fr       */
+/*   Updated: 2023/07/03 15:36:20 by hguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int	ft_lexer_alpha(t_data *data)
 			|| data->lexer_char == '>' || !ft_isspace(data->lexer_char)
 			|| data->lexer_char == '\'' || data->lexer_char == '\"')
 			break ;
+		if (data->prompt[data->lexer_check] == '$')
+			get_dollar(data);
 		i++;
 		lexer_advance(data);
 	}

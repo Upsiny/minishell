@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:15:45 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/07/02 16:18:28 by hguillau         ###   ########.fr       */
+/*   Updated: 2023/07/03 16:25:00 by hguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,13 +79,20 @@ int	ft_double_quotes(t_data *data)
 	i = 1;
 	if (ft_check_endquote(data, '\"') != 0)
 	{
-		i = ft_check_endquote(data, '\"');
-		implement_list(data, TOKEN_DQUOTE, i - 2, data->lexer_check + 1);
-		while (i)
+		i = data->lexer_check;
+		lexer_advance(data);
+		//implement_list(data, TOKEN_DQUOTE, i - 2, data->lexer_check + 1);
+		while (data->prompt[data->lexer_check] != '\"')
 		{
-			lexer_advance(data);
-			i--;
+		//	printf("%c, %d\n", data->prompt[data->lexer_check], data->lexer_check);
+			if (data->prompt[data->lexer_check] == '$')
+				get_dollar(data);
+			else
+				lexer_advance(data);
 		}
+		implement_list(data, TOKEN_DQUOTE, (data->lexer_check - i) - 1, i + 1);
+		//if (data->prompt[data->lexer_check + 1])
+			lexer_advance(data);
 		return (0);
 	}
 	else
