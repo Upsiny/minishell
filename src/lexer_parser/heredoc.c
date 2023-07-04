@@ -6,7 +6,7 @@
 /*   By: hguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 12:17:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/07/04 13:29:45 by hguillau         ###   ########.fr       */
+/*   Updated: 2023/07/04 14:12:31 by hguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ void	ft_heredoc(t_list *tmp, t_data *data)
 		&& tmp2->next->token_type != TOKEN_SQUOTE
 		&& tmp2->next->token_type != TOKEN_DQUOTE)
 	{
-		printf("parse error near `%s'", tmp->next->content);
+		if (tmp2->next)
+			printf("syntax error near unexpected token `%s'", tmp2->next->content);
+		else
+			printf("syntax error near unexpected token `newline'");
 		ft_error_parsing("");
 	}
 	else
@@ -40,5 +43,5 @@ void	ft_heredoc(t_list *tmp, t_data *data)
 			free(heredoc);
 		}
 	}
-	//printf("%s", data->content_here);
+	printf("\n\n%s\n\n", data->content_here);
 }
