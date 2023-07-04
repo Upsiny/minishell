@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 11:43:29 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/07/03 14:37:34 by hguillau         ###   ########.fr       */
+/*   Updated: 2023/07/04 16:39:03 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,8 +115,8 @@ void	redir_builtins_or_execve(t_data *data, char **cmd)
 		echo_builtin(cmd);
 	else if (ft_strcmp(ft_tolower(cmd[0]), "env") == 0)
 		env_builtin(data, cmd);
-//	else if (ft_strcmp(ft_tolower(cmd[0]), "export") == 0)
-//		export_builtin(data, cmd);
+	else if (ft_strcmp(ft_tolower(cmd[0]), "export") == 0)
+		export_builtin(data, cmd);
 	else if (ft_strcmp(ft_tolower(cmd[0]), "unset") == 0)
 		unset_builtin(data, cmd);
 //	else

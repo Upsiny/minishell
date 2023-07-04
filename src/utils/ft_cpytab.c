@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 16:33:17 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/06/28 16:40:45 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/07/04 15:05:44 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	**ft_cpytab(char **tab)
 
 	size = 0;
 	i = 0;
+	if (!tab)
+		return (NULL);
 	while (tab[size] != NULL)
 		size++;
 	cpy = malloc(sizeof(char *) * (size + 1));

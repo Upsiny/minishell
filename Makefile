@@ -6,7 +6,7 @@
 #    By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/31 11:43:52 by hguillau          #+#    #+#              #
-#    Updated: 2023/07/04 14:12:37 by hguillau         ###   ########.fr        #
+#    Updated: 2023/07/04 17:21:39 by tpaufert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,8 @@ SRCS    	=	src/main.c							\
 				src/builtins/env.c					\
 				src/builtins/unset.c				\
 				src/builtins/export_init.c			\
+				src/builtins/export.c				\
+				src/builtins/export_utils.c			\
 				src/execution/utils_exec.c			\
 				src/execution/redir_exec_builtins.c	\
 				src/execution/utils.c				\

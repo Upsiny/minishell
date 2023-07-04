@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dollar.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hguillau <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 16:18:37 by hguillau          #+#    #+#             */
-/*   Updated: 2023/07/03 16:24:58 by hguillau         ###   ########.fr       */
+/*   Updated: 2023/07/04 18:11:07 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	replace_prompt(t_data *data, char *value, int start, int end)
 	new_prompt = ft_strjoin(new_prompt, value);
 	new_prompt = ft_strjoin(new_prompt, last_part);
 //	printf("first part : %s\n", first_part);
-//	printf("new_promp : %s\n", new_prompt);
+	printf("new_promp : %s\n", new_prompt);
 	data->prompt = ft_strdup3(new_prompt);
 	free(new_prompt);
 	free(first_part);
@@ -90,7 +90,7 @@ void	get_dollar(t_data *data)
 		i++;
 	}
 //	printf("valeur dollar : %s\n", dol_value);
-	replace_prompt(data, getenv(dol_value), data->lexer_check, data->lexer_check + j);
-//	printf("%s\n", getenv(dol_value)); //remplacer par un autre getenv
+	replace_prompt(data, search_in_env(data, dol_value), data->lexer_check, data->lexer_check + j);
+	//printf("%s\n", search_in_env(data, dol_value)); //remplacer par un autre getenv
 	free(dol_value);
 }

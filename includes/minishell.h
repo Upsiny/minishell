@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/07/04 14:12:35 by hguillau         ###   ########.fr       */
+/*   Updated: 2023/07/04 17:24:22 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,12 @@ void	exit_builtin(t_data *data, char **cmd);
 void	env_builtin(t_data *data, char **cmd);
 void	unset_builtin(t_data *data, char **cmd);
 char	**order_exp(char **cp_env);
+int		check_var(char *str);
+void	export_builtin(t_data *data, char **cmd);
+int		is_valid_exp(char *str);
+int		is_valid_exp2(char *str);
+int		count_variables(char **env);
+void	print_export(char **cp_exp);
 
 //////////// EXECUTION /////////////
 
@@ -140,5 +146,6 @@ int		ft_isspace(char c);
 int 	ft_count_list(t_list *head);
 int		ft_tab_len(char **tab);
 char	**ft_cpytab(char **tab);
+char	*search_in_env(t_data *data, char *str);
 
 #endif

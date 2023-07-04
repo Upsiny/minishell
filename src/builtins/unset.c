@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 15:20:49 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/06/28 17:02:50 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/07/04 17:43:32 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	**unset_var(char **tab_cmd, char *str)
 	i = 0;
 	j = 0;
 	cpy = malloc(sizeof(char *) * (ft_tab_len(tab_cmd) + 1));
-	while (tab_cmd[i])
+	while (tab_cmd[i] != NULL && tab_cmd)
 	{
 		if (ft_strncmp(tab_cmd[i], str, ft_strlen(str)) == 0)
 		{
@@ -49,7 +49,8 @@ char	**unset_var(char **tab_cmd, char *str)
 				cpy[j++] = ft_strdup3(tab_cmd[++i]);
 		}
 		else
-			cpy[j++] = ft_strdup3(tab_cmd[i++]);
+			cpy[j++] = ft_strdup3(tab_cmd[i]);
+		i++;
     }
     cpy[j] = NULL;
     free_tab(tab_cmd);
@@ -87,6 +88,9 @@ void	unset_builtin(t_data *data, char **cmd)
 		}
 		i++;
 	}
+	free_tab(data->cp_exp);
+	data->cp_exp = order_exp(data->cp_env);
+	data->ret_err = 0;
 	/*while (data->cp_env[j])
 	{
 		printf("%s\n", data->cp_env[j]);
