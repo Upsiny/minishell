@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/07/04 17:24:22 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/07/04 18:40:53 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ void	ft_print_error_msg3(char *s1, char *s2, char *s3);
 //////////// BUILTINS //////////////
 
 int		ft_nb_slash(char *str);
-void	pwd_builtin(void);
+void	pwd_builtin(t_data *data, char **cmd);
 char	*get_home_value(char **cp_env);
 void	get_pwd(t_data *data);
 void	cd_builtin(t_data *data, char **cmd);

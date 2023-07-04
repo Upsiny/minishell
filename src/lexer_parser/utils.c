@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 14:05:13 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/07/04 18:09:20 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/07/04 18:43:27 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,17 @@ char	*search_in_env(t_data *data, char *str)
 }
 */
 
-char	*search_in_env(t_data *data, char *str) {
+char	*search_in_env(t_data *data, char *str)
+{
 	
-	int i = 0;
-	char**	env = data->cp_env;
-	
+	int		i;
+	char	**env;
+
+	i = 0;
+	env = data->cp_env;
 	while (env[i] && ft_strncmp(env[i], str, ft_strlen(str)))
 		i++;
-	return ft_strchr(env[i], '=') + 1;
+	return (ft_strchr(env[i], '=') + 1);
 }
 
 
