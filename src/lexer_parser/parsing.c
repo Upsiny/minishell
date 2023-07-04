@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 17:23:59 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/07/02 16:13:59 by hguillau         ###   ########.fr       */
+/*   Updated: 2023/07/04 13:29:42 by hguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int	ft_parse_redir(t_data *data, int index, t_list *tmp)
 		printf("syntax error near unexpected token `%s'", tmp->next->content);
 		return (ft_error_parsing(""));
 	}
+	else if (!ft_strcmp(tmp->content, "<<"))
+		ft_heredoc(tmp, data);
 	return (0);
 }
 

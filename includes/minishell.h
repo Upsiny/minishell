@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/07/03 16:24:50 by hguillau         ###   ########.fr       */
+/*   Updated: 2023/07/04 13:29:50 by hguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ typedef struct s_data
 	t_cmd	*st_cmd;
 	pid_t	pid;
 	char	*prompt;
+	char	*content_here;
 	char	**cp_env;
 	char	**cp_exp;
 	t_list	*s_lex;
@@ -95,6 +96,7 @@ void	implement_list(t_data *data, int type, int index, int start);
 //char	*verif_pipes(char *prompt);
 int		ft_check_lst(t_data *data);
 void	ft_free_lst(t_data *data);
+void	ft_heredoc(t_list *tmp, t_data *data);
 
 //////////// Signaux ////////////////
 

@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 16:11:27 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/07/02 15:58:23 by hguillau         ###   ########.fr       */
+/*   Updated: 2023/07/04 13:10:28 by hguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ t_data	*init_struct(char **envp)
 		data->cp_env = ft_tabcpy(envp);
 	data->cp_exp = ft_cpytab(data->cp_env);
 	data->cp_exp = order_exp(data->cp_exp);
+	data->content_here = NULL;
 //	int i = 0;
 /*	while (data->cp_env[i])
 	{

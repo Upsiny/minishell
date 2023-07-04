@@ -6,7 +6,7 @@
 #    By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/31 11:43:52 by hguillau          #+#    #+#              #
-#    Updated: 2023/07/03 16:24:55 by hguillau         ###   ########.fr        #
+#    Updated: 2023/07/04 13:29:52 by hguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ SRCS    	=	src/main.c							\
 				src/lexer_parser/dollar.c			\
 				src/lexer_parser/parsing.c			\
 				src/lexer_parser/free_lexer.c		\
+				src/lexer_parser/heredoc.c			\
 				src/utils/free.c					\
 				src/utils/ft_count_list.c			\
 				src/expender/expender.c				\

@@ -6,12 +6,13 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 10:23:44 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/07/03 16:25:02 by hguillau         ###   ########.fr       */
+/*   Updated: 2023/07/04 13:29:47 by hguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 //ne pas oublier de stocker dans nb_cmds le nombre de cmds, sinon le builtin exit ne fonctionne pas pareil
+//bah fait le
 int	main(int ac, char **av, char **envp)
 {
 	t_data	*data;
@@ -38,7 +39,7 @@ int	main(int ac, char **av, char **envp)
 		if (!lexer_work(data))// Dans token type strings: supprimer les quotes (si circuit fermer)
 		{
 			ft_check_lst(data); // a supprimer quand la condition ci dessous est complete
-			print_list(data); // erreur dans s_lex, le premier maillon a un content vide
+		//	print_list(data); // erreur dans s_lex, le premier maillon a un content vide
 		//	if (!ft_check_lst(data)) // securiter a valider quqnd les free seront fait !
 		//	{
 		//		data->nb_cmds = 1; // pour exit, il faut indiquer que cest la seule cmds
@@ -47,6 +48,7 @@ int	main(int ac, char **av, char **envp)
 		//	}
 		}
 		ft_free_lst(data);
+		free(data->content_here);
 		free(data->prompt);
 	}
 //	free_minishell(data);
