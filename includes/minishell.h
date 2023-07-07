@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/07/04 18:40:53 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/07/07 17:32:57 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,8 @@ typedef struct s_data
 	int		nb_cmds;
 	char	*val_home;
 	char	*pwd;
-	char	*old_pwd;
-	int		ret_err; //rends cette variable en globale ! merci helian on est oblige. CEST BEN QUI LE DIT
+	char	*oldpwd;
+	int		ret_err; //rendre cette variable en globale merci helian on est oblige apparement histoire de signaux
 }	t_data;
 
 //////////// Lexer_Parser //////////////////
@@ -107,6 +107,8 @@ void	ft_signaux(void);
 void	ft_error_msg(char *msg);
 int		ft_error_parsing(char *msg);
 void	error_lexer(char *msg);
+void	ft_print_error_msg1(char *s1);
+void	ft_print_error_msg2(char *s1, char *s2);
 void	ft_print_error_msg3(char *s1, char *s2, char *s3);
 
 //////////// BUILTINS //////////////
@@ -118,6 +120,15 @@ void	get_pwd(t_data *data);
 void	cd_builtin(t_data *data, char **cmd);
 void	cd_go_home(t_data *data);
 int		cd_go_arg(char *arg);
+void	change_value_env(t_data *data, char **cmd);
+void 	change_value_exp(t_data *data, char **cmd);
+void	cpy_value(char *name_var, char **str, char *new_val);
+void	change_val_pwdpath(char **str, char **cmd);
+void	change_val(char **str, char *new_pwd, char *pwd, char *oldpwd);
+void	change_value_pwd(char **str);
+void	change_value_oldpwd(char **str, char *pwd, char *oldpwd);
+char	*verif_pwd(char *line);
+int		recup_new_pwd(char **str);
 void	echo_builtin(char **cmd);
 void	exit_builtin(t_data *data, char **cmd);
 void	env_builtin(t_data *data, char **cmd);
@@ -147,5 +158,6 @@ int 	ft_count_list(t_list *head);
 int		ft_tab_len(char **tab);
 char	**ft_cpytab(char **tab);
 char	*search_in_env(t_data *data, char *str);
+char	*ft_strndup(const char *src, size_t n);
 
 #endif

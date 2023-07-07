@@ -6,105 +6,62 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 15:18:20 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/07/03 14:29:58 by hguillau         ###   ########.fr       */
+/*   Updated: 2023/07/07 17:25:32 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
 
-/*void	change_value_exp(t_data *data, char **cmd)
+void change_value_exp(t_data *data, char **cmd)
 {
-	if (cmd[1][0] == '/')
-		change_val(data->cp_exp, cmd[1], pwd, oldpwd);
-	else if ((ft_strncmp(cmd[1], ".", 1) == 0 || ft_strncmp(cmd[1], "./", 2)
-		== 0))
-		change_value_oldpwd(data->cp_exp, pwd, oldpwd);
-	else if ((ft_strncmp(cmd[1], "..", 2) == 0 || ft_strncmp(cmd[1],
-			"../", 3) == 0))
-	{
-		change_value_pwd(data->cp_exp);
-		change_value_oldpwd(data->cp_exp, pwd, oldpwd);
-	}
-	else if (ft_strncmp(cmd[1], "./", 2) > 0
-		|| ft_strncmp(cmd[1], "../", 3) > 0)
-	{
-		change_value_oldpwd(data->cp_exp, pwd, oldpwd);
-		change_val_pwdpath(data->cp_exp, cmd);
-	}
+    if (cmd[1][0] == '/')
+        change_val(data->cp_exp, cmd[1], data->pwd, data->oldpwd);
+    else if (ft_strcmp(cmd[1], ".") == 0 || ft_strcmp(cmd[1], "./") == 0)
+        change_value_oldpwd(data->cp_exp, data->pwd, data->oldpwd);
+    else if (ft_strcmp(cmd[1], "..") == 0 || ft_strcmp(cmd[1], "../") == 0)
+    {
+        change_value_pwd(data->cp_exp);
+        change_value_oldpwd(data->cp_exp, data->pwd, data->oldpwd);
+    }
+    else if ((ft_strcmp(cmd[1], "./") > 0 || ft_strcmp(cmd[1], "../") > 0))
+    {
+        change_value_oldpwd(data->cp_exp, data->pwd, data->oldpwd);
+        change_val_pwdpath(data->cp_exp, cmd);
+    }
 }
 
-void	change_value_env(t_data *data, char **cmd)
+void change_value_env(t_data *data, char **cmd)
 {
-	if (cmd[1][0] == '/')
-		change_val(data->cp_env, cmd[1], pwd, oldpwd);
-	else if ((ft_strncmp(cmd[1], ".", 1) == 0 || ft_strncmp(cmd[1], "./", 2)
-		== 0))
-		change_value_oldpwd(data->cp_env, pwd, oldpwd);
-	else if ((ft_strncmp(cmd[1], "..", 2) == 0 || ft_strncmp(cmd[1],
-			"../", 3) == 0))
-	{
-		change_value_pwd(data->cp_env);
-		change_value_oldpwd(data->cp_env, pwd, oldpwd);
-	}
-	else if (ft_strncmp(cmd[1], "./", 2) > 0
-		|| ft_strncmp(cmd[1], "../", 3) > 0)
-	{
-		change_value_oldpwd(data->cp_env, pwd, oldpwd);
-		change_val_pwdpath(data->cp_env, cmd);
-	}
-}*/
-
-void	get_pwd(t_data *data)
-{
-	int		i;
-
-	i = 0;
-	while (data->cp_env[i])
-	{
-		if (ft_strncmp(data->cp_env[i], "PWD=", 4) == 0)
-		{
-			data->pwd = ft_strdup3(data->cp_env[i]);
-			break ;
-		}
-		i++;
-	}
-	i = 0;
-	while (data->cp_env[i])
-	{
-		if (ft_strncmp(data->cp_env[i], "OLDPWD=", 7) == 0)
-		{
-			data->old_pwd = ft_strdup3(data->cp_env[i]);
-			break ;
-		}
-		i++;
-	}
+    if (cmd[1][0] == '/')
+        change_val(data->cp_env, cmd[1], data->pwd, data->oldpwd);
+    else if (ft_strcmp(cmd[1], ".") == 0 || ft_strcmp(cmd[1], "./") == 0)
+        change_value_oldpwd(data->cp_env, data->pwd, data->oldpwd);
+    else if (ft_strcmp(cmd[1], "..") == 0 || ft_strcmp(cmd[1], "../") == 0)
+    {
+        change_value_pwd(data->cp_env);
+        change_value_oldpwd(data->cp_env, data->pwd, data->oldpwd);
+    }
+    else if ((ft_strcmp(cmd[1], "./") > 0 || ft_strcmp(cmd[1], "../") > 0))
+    {
+        change_value_oldpwd(data->cp_env, data->pwd, data->oldpwd);
+        change_val_pwdpath(data->cp_env, cmd);
+    }
 }
 
-char	*get_home_value(char	**cp_env)
+char *get_env_value(char **env, const char *var)
 {
-	char	*home;
-	int		i;
-	int		j;
-	int		z;
+    int i = 0;
+    while (env[i])
+    {
+        if (ft_strncmp(env[i], var, ft_strlen(var)) == 0)
+            return ft_strdup3(env[i]);
+        i++;
+    }
+    return NULL;
+}
 
-	i = 0;
-	j = 0;
-	z = 0;
-	while (cp_env && cp_env[i++])
-	{
-		if (ft_strncmp(cp_env[i], "HOME=", 5) == 0)
-			break ;
-	}
-	home = malloc(sizeof(char) * (ft_strlen(cp_env[i]) + 1));
-	while (cp_env && cp_env[i][j] != '=')
-		j++;
-	j++;
-	while (cp_env && cp_env[i][j])
-	{
-		home[z] = cp_env[i][j];
-		j++;
-		z++;
-	}
-	home[z] = '\0';
-	return (home);
+void get_pwd(t_data *data)
+{
+    data->pwd = ft_strdup3(get_env_value(data->cp_env, "PWD="));
+    data->oldpwd = ft_strdup3(get_env_value(data->cp_env, "OLDPWD="));
 }

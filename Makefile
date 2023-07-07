@@ -6,7 +6,7 @@
 #    By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/31 11:43:52 by hguillau          #+#    #+#              #
-#    Updated: 2023/07/04 17:21:39 by tpaufert         ###   ########.fr        #
+#    Updated: 2023/07/07 17:26:30 by tpaufert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ SRCS    	=	src/main.c							\
 				src/builtins/pwd.c					\
 				src/builtins/cd.c					\
 				src/builtins/cd_utils.c				\
+				src/builtins/cd_utils2.c			\
+				src/builtins/cd_utils3.c			\
 				src/builtins/echo.c					\
 				src/builtins/exit.c					\
 				src/builtins/env.c					\
@@ -40,9 +42,10 @@ SRCS    	=	src/main.c							\
 				src/lexer_parser/parsing.c			\
 				src/lexer_parser/free_lexer.c		\
 				src/lexer_parser/heredoc.c			\
+				src/expender/expender.c				\
 				src/utils/free.c					\
 				src/utils/ft_count_list.c			\
-				src/expender/expender.c				\
+				src/utils/ft_strndup.c				\
 				src/utils/tab_len.c					\
 				src/utils/ft_cpytab.c				\
 

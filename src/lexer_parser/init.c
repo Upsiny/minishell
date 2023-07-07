@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 16:11:27 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/07/04 13:10:28 by hguillau         ###   ########.fr       */
+/*   Updated: 2023/07/07 16:31:49 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,6 @@ t_data	*init_struct(char **envp)
 	data->ret_err = 0;
 	data->val_home = get_home_value(data->cp_env);
 	data->pwd = NULL;
-	data->old_pwd = NULL;
+	data->oldpwd = NULL;
 	return (data);
 }
