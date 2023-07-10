@@ -6,11 +6,27 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:10:50 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/07/04 18:46:48 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/07/10 13:51:03 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
+
+int	checker_n(char	*arg)
+{
+	int	i;
+
+	i = 1;
+	if (!arg[i])
+		return (0);
+	while (arg[i])
+	{
+		if (arg[i] != 'n')
+			return (0);
+		i++;
+	}
+	return (1);
+}
 
 void	check_option(char **cmd)
 {
@@ -39,7 +55,7 @@ void	echo_builtin(char **cmd)
 			printf("\n");
 			return ;
 		}
-	if ((ft_strncmp((cmd[1]), "-n", 2)) == 0 && ft_strlen(cmd[1]) == 2)
+	if ((ft_strncmp((cmd[1]), "-n", 2)) == 0 && checker_n(cmd[1]) == 1)
 		check_option(cmd);
 	else if (ft_strlen(cmd[0]) == 4)
 		while (cmd[i] && cmd[i][0] != '\0' && (cmd[i][0] >= 32
