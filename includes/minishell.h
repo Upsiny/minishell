@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:27 by hguillau          #+#    #+#             */
-/*   Updated: 2023/07/07 17:32:57 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/07/10 15:22:32 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,8 +145,10 @@ void	print_export(char **cp_exp);
 
 int		ft_strcmp(char *s1, char *s2);
 void	ft_set_path_and_execve(t_data *data, char **cmd);
+void	ft_execution(t_data *data, char **all_path, char **pathcmd, char **cmd);
 char	**verif_cmd_struct(char **cmd);
 void	redir_builtins_or_execve(t_data *data, char **cmd);
+int		aff_errcmd(char **cmd);
 
 //////////// UTILS /////////////////
 

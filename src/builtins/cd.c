@@ -6,7 +6,7 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:22:13 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/07/07 17:20:09 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/07/10 17:21:37 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	cd_builtin(t_data *data, char **cmd)
 		free_ptr(data->oldpwd);
 	}
 	else
-	{
+	{	
 		change_value_env(data, cmd);
 		change_value_exp(data, cmd);
 		free_ptr(data->pwd);
