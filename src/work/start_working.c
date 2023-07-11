@@ -6,13 +6,13 @@
 /*   By: tpaufert <tpaufert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 15:09:10 by tpaufert          #+#    #+#             */
-/*   Updated: 2023/06/16 17:45:40 by tpaufert         ###   ########.fr       */
+/*   Updated: 2023/07/11 19:53:49 by tpaufert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
 
-int	ft_str(char *content, t_data *data)
+/*int	ft_str(char *content, t_data *data)
 {
 	char	**cmd;
 
@@ -72,3 +72,4 @@ int	pre_start_work(t_data *data)
 	ret = start_work(data);
 	return (ret);
 }
+*/
