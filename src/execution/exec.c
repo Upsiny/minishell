@@ -62,10 +62,10 @@ void	ft_execve(t_data *data, char **all_path, char **pathcmd, char **cmd)
 {
 	char	*gd_path;
 	int		i;
-	int		z;
+//	int		z;
 
 	i = 0;
-	z = 0;
+//	z = 0;
 	gd_path = NULL;
 	while (all_path[i])
 	{
@@ -81,7 +81,7 @@ void	ft_execve(t_data *data, char **all_path, char **pathcmd, char **cmd)
 		else
 			i++;
 		free(gd_path);
-		z++;
+//		z++;
 	}
 	(void)cmd;
 	//if (z == i)

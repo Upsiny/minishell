@@ -59,10 +59,10 @@ void	add_variable(char ***env, char *variable)
 	int		count;
 	char	**new_env;
 	int		i;
-	int		j;
+//	int		j;
 
 	i = 0;
-	j = 0;
+//	j = 0;
 	count = count_variables(*env);
 	new_env = malloc(sizeof(char *) * (count + 2));
 	if (new_env == NULL)
